@@ -1,0 +1,38 @@
+Author = "H4b4sch";
+onLoadName = "Swiss Survival";
+onLoadMission = "Survive and Raise";
+//loadScreen = "";
+respawnTemplatesWest[] = {"MenuPosition"};
+
+
+#include "playerActions\actions.hpp"
+
+// Revive
+respawn = 3;
+respawndelay = 10;
+class RscTitles {
+	#include "ais_injury\dialogs\rscTitlesAIS.hpp"
+};
+class CfgFunctions {
+	#include "ais_injury\cfgFunctionsAIS.hpp"
+};
+
+class Header
+{
+	gameType=COOP;
+	minPlayers=1;
+	maxPlayers=7;
+};
+
+class Params {
+
+	// Example Parameter
+	class EmtpyLine0 {
+		title = ":: Mission Settings";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;
+	};
+	
+
+};

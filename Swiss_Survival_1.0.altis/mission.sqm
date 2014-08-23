@@ -1,0 +1,376 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"a3_characters_f_gamma",
+		"a3_map_altis",
+		"a3_soft_f_gamma_offroad",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Weapons_F_Ammoboxes",
+		"a3_weapons_f_beta_ammoboxes",
+		"A3_Structures_F_System",
+		"A3_Soft_F_TruckHeavy",
+		"A3_Soft_F_Truck",
+		"A3_Soft_F_Gamma_TruckHeavy",
+		"A3_Armor_F_APC_Wheeled_03",
+		"A3_Air_F_Beta_Heli_Transport_02",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f_beta",
+		"A3_Signs_F_AD",
+		"A3_Structures_F_Civ_InfoBoards",
+		"A3_Structures_F_Items_Electronics",
+		"A3_Structures_F_Civ_Camping",
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Boat_F_Beta_Boat_Armed_01",
+		"A3_Boat_F_Civilian_Boat",
+		"A3_Structures_F_Mil_Fortification",
+		"A3_Structures_F_Mil_BagBunker",
+		"A3_Structures_F_Civ_Market",
+		"A3_Structures_F_EPA_Mil_Scrapyard",
+		"A3_Weapons_F_EPA_Ammoboxes",
+		"A3_Structures_F_Wrecks",
+		"a3_weapons_f_gamma_ammoboxes",
+		"A3_Structures_F_Items_Vessels",
+		"A3_Structures_F_Mil_BagFence",
+		"A3_Structures_F_Walls",
+		"A3_Static_F",
+		"a3_static_f_gamma",
+		"A3_Soft_F_Crusher_UGV",
+		"a3_uav_f_weapons_f_gamma_ammoboxes",
+		"A3_Static_F_Mortar_01",
+		"A3_Structures_F_Training",
+		"A3_Modules_F_Effects",
+		"A3_Soft_F_MRAP_03",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Boat_F_SDV_01",
+		"A3_Characters_F_OPFOR",
+		"A3_Structures_F_Ind_Cargo",
+		"A3_Armor_F_T100K",
+		"A3_Air_F_Heli_Light_02",
+		"A3_Air_F_Beta_Heli_Attack_02",
+		"A3_Structures_F_Mil_Shelters",
+		"a3_static_f_gamma_mortar_01",
+		"a3_static_f_gamma_aa",
+		"A3_Structures_F_Mil_Helipads",
+		"a3_characters_f_epa"
+	};
+	addOnsAuto[]=
+	{
+		"a3_characters_f_gamma",
+		"A3_Characters_F_OPFOR",
+		"a3_characters_f_epa",
+		"a3_soft_f_gamma_offroad",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Structures_F_System",
+		"A3_Soft_F_Gamma_TruckHeavy",
+		"A3_Soft_F_TruckHeavy",
+		"A3_Soft_F_Truck",
+		"A3_Signs_F_AD",
+		"A3_Boat_F_Beta_Boat_Armed_01",
+		"A3_Boat_F_Civilian_Boat",
+		"A3_Boat_F_SDV_01",
+		"A3_Structures_F_Mil_Fortification",
+		"A3_Structures_F_Mil_BagBunker",
+		"A3_Structures_F_Civ_Market",
+		"A3_Structures_F_EPA_Mil_Scrapyard",
+		"A3_Weapons_F_Ammoboxes",
+		"a3_weapons_f_beta_ammoboxes",
+		"A3_Structures_F_Mil_BagFence",
+		"A3_Structures_F_Civ_Camping",
+		"A3_Structures_F_Ind_Cargo",
+		"a3_weapons_f_gamma_ammoboxes",
+		"A3_Structures_F_Mil_Shelters",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Structures_F_Civ_InfoBoards",
+		"a3_static_f_gamma_mortar_01",
+		"A3_Static_F_Gamma",
+		"a3_map_altis"
+	};
+	randomSeed=4613483;
+	class Intel
+	{
+		briefingName="Swiss Survival";
+		timeOfChanges=7200;
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.29999998;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2035;
+		day=8;
+		hour=9;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+	class Groups
+	{
+		items=5;
+		class Item0
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={197.2569,0.08519581,30532.703};
+					id=0;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="server";
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14511.46,-5.5158576e-005,14527.765};
+					id=1;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="center";
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=6;
+				class Item0
+				{
+					position[]={8462.7119,103.53835,25140.572};
+					azimut=33.248501;
+					special="NONE";
+					id=2;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.46666664;
+					text="p1";
+					init="this allowDamage false; this setCaptive true";
+				};
+				class Item1
+				{
+					position[]={8463.7119,103.53835,25140.572};
+					azimut=33.248501;
+					special="NONE";
+					id=3;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.46666664;
+					text="p2";
+				};
+				class Item2
+				{
+					position[]={8464.7119,103.53835,25140.572};
+					azimut=33.248501;
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.33333331;
+					text="p4";
+				};
+				class Item3
+				{
+					position[]={8461.7119,103.53835,25140.572};
+					azimut=33.248501;
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="p3";
+				};
+				class Item4
+				{
+					position[]={8460.7119,103.53835,25140.572};
+					azimut=33.248501;
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.2;
+					text="p6";
+				};
+				class Item5
+				{
+					position[]={8462.7119,103.53835,25142.572};
+					azimut=33.248501;
+					special="NONE";
+					id=7;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.33333331;
+					text="p5";
+					init="(unitBackpack this) addItemCargo [""Medikit"", 1];";
+				};
+			};
+		};
+		class Item3
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14093.12,10.543385,11565.933};
+					id=38;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="HC";
+					init="removeallweapons this;";
+					description="Headless Client";
+				};
+			};
+		};
+		class Item4
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0;
+					position[]={8454.8535,99.573082,25165.238};
+					id=39;
+					side="WEST";
+					vehicle="I_G_resistanceLeader_F";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="SLINGSHOT";
+					description="Slingshot";
+				};
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=14421743;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=8806360;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=14479685;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+};
