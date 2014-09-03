@@ -9,6 +9,10 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 [
+	"MRAP_01_base_F",
+	"MRAP_02_base_F",
+	"MRAP_03_base_F",
+	"B_APC_Tracked_01_CRV_F"
 ];
 
 R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +

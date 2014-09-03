@@ -4,6 +4,7 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 [
+	"Plane",
 	"UAV_02_base_F"
 ];
 

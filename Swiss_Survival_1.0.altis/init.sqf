@@ -8,7 +8,11 @@ enableSaving [true,true];
 
 private ["_startPosLocale"];
 
+// GLOBAL: All used Bases
+arr_usedBases = [];
+
 // Some Scripts
+_null = execVM "scripts\loot.sqf";
 [] execVM "SAF_Field_Repair\Field_Repair.sqf";
 [] execVM "R3F_LOG\init.sqf";
 call compile preprocessFileLineNumbers "Scripts\startPos.sqf";

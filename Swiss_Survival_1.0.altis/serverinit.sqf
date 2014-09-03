@@ -7,9 +7,6 @@ private ["_distanceBetween", "_currentPos", "_index",
 				 "_valid", "_pos", "_enemyBasePosition", "_marker", "_instanceNo",
 				 "_baseTypes", "_baseTypesPercentage", "_numMarkersOfType", "_numTypeAtLeast",
 				 "_randNum", "_maxPatrolling"];
-				 
-// GLOBAL: All used Bases
-arr_usedBases = [];
 
 // GLOBAL: Index for lootmarkers
 var_lootMarkerIndex = 0;
@@ -230,13 +227,10 @@ _instanceNo = 0;
   									_housePatrols, _patrollingInfantry, _patrollingMotorized,
   									_patrollingArmor, _static, _patrollingHelicopters];*/
   
-	_null = [["enemyBase" + str _instanceNo],[_housePatrols,1],[_patrollingInfantry,1],[_patrollingMotorized,2],[_patrollingArmor],[_static],[_patrollingHelicopters,0],[0,0,1000,EAST,TRUE]] call EOS_Spawn;
-	//_null = [["enemyBase" + str _instanceNo],[0,1],[0,1],[0,2],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;
+	//_null = [["enemyBase" + str _instanceNo],[_housePatrols,1],[_patrollingInfantry,1],[_patrollingMotorized,2],[_patrollingArmor],[_static],[_patrollingHelicopters,0],[0,0,1000,EAST,TRUE]] call EOS_Spawn;
+	_null = [["enemyBase" + str _instanceNo],[0,1],[0,1],[0,2],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;
 	_instanceNo = _instanceNo + 1;
 } foreach arr_usedBases;
 
 // Disable Fatigue for all players
 { _x enableFatigue false; } forEach (units group player);
-
-// Spawn some loot
-_null = execVM "scripts\loot.sqf";

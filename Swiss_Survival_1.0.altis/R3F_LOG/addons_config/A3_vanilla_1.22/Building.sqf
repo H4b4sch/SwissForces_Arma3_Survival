@@ -20,6 +20,45 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
+	["Land_Campfire_F", 1],
+  ["Land_CampingChair_V2_F", 1],
+  ["Land_CampingTable_F", 2],
+	["Land_CampingTable_small_F", 2],
+  ["Land_FirePlace_F", 1],
+  ["Land_TentA_F", 1],
+  ["Land_MapBoard_F", 1],
+	["MapBoard_altis_F", 1],
+  ["Land_Sack_F", 1],
+  ["Land_Sacks_heap_F", 1],
+  ["Land_MetalBarrel_empty_F", 2],
+	["CamoNet_BLUFOR_F", 5],
+  ["Land_BarGate_F", 6],
+  ["Land_WoodenTable_small_F", 3],
+  ["Land_Net_Fence_4m_F", 4],
+  ["Land_TentDome_F", 1],
+  ["Land_FloodLight_F", 2],
+  ["Land_BagFence_End_F", 4],
+  ["Land_BagFence_Corner_F", 4],
+  ["Land_BagFence_Short_F", 6],
+  ["Land_Razorwire_F", 4],
+  ["CamoNet_BLUFOR_open_F", 8],
+  ["Land_Net_Fence_Gate_F", 6],
+  ["Land_Net_Fence_8m_F", 8],
+  ["Land_Mil_WiredFence_F", 6],
+  ["Land_BagFence_Short_F", 4],
+  ["Land_BagFence_Long_F", 7],
+  ["CamoNet_BLUFOR_big_F", 6],
+  ["Land_Mil_WiredFence_Gate_F", 6],
+  ["Land_New_WiredFence_5m_F", 5],
+	["Land_BagBunker_Small_F", 10],
+  ["Land_BagFence_Long_F", 8],
+  ["Land_BagFence_Round_F", 8],
+  ["Land_HBarrierBig_F", 6],
+  ["Land_New_WiredFence_10m_F", 4],
+  ["Land_BagBunker_Large_F", 14],
+  ["Land_BagBunker_Tower_F", 20],
+  ["Land_HBarrierTower_F", 14],
+	["Land_HBarrierWall_corner_F", 8],
 	["Camping_base_F", 1],
 	["FlagSmall_F", 1],
 	["HBarrier_base_F", 3],
@@ -56,12 +95,13 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_PlasticBarrier_01_F", 2],
 	["Land_PlasticBarrier_02_F", 2],
 	["BagBunker_base_F", 15],
-	["Land_BagBunker_Small_F", 6],
 	["BagFence_base_F", 2],
 	["FlagCarrierCore", 2]
 ];
 
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
+arr_objectBaseTier0 + arr_objectBaseTier1 + arr_objectBaseTier2 +
+arr_objectBaseTier3 + arr_objectBaseTier4 +
 [
 	"Camping_base_F",
 	"FlagSmall_F",
