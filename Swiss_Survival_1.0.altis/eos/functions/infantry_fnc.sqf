@@ -20,7 +20,7 @@ _grpSize=_r+_grpMin;
 for "_x" from 1 to _grpSize do {					
 		_unitType=_pool select (floor(random(count _pool)));
 		_unit = _grp createUnit [_unitType, _pos, [], 0.4, "FORM"];  
-		_unit addEventHandler ["killed", {_this exec "scripts\deleteInventory.sqf"}];
+		_unit addEventHandler ["killed", {[_this] execVM "scripts\cleanUnit.sqf"}];
 	};
 
 

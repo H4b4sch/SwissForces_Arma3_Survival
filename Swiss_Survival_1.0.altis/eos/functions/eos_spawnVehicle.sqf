@@ -15,7 +15,8 @@ _vehCrew=[];
 		{
 	_currentPosition=_x;
 	if (_currentPosition select 0 == "driver")then {
-			_unit = _grp createUnit [(_vehicleType select 1), _position, [], 0.4, "CAN_COLLIDE"];					
+			_unit = _grp createUnit [(_vehicleType select 1), _position, [], 0.4, "CAN_COLLIDE"];		
+			_unit addEventHandler ["killed", {[_this] execVM "scripts\cleanUnit.sqf"}];			
 			_unit assignAsDriver _vehicle;
 			_unit moveInDriver _vehicle;
 			_vehCrew set [count _vehCrew,_unit];
@@ -23,6 +24,7 @@ _vehCrew=[];
 	
 	if (_currentPosition select 0 == "turret")then {
 			_unit = _grp createUnit [(_vehicleType select 1), _position, [], 0.4, "CAN_COLLIDE"];
+			_unit addEventHandler ["killed", {[_this] execVM "scripts\cleanUnit.sqf"}];
 			_unit assignAsGunner _vehicle;
 			_unit MoveInTurret [_vehicle,_currentPosition select 1];
 			_vehCrew set [count _vehCrew,_unit];

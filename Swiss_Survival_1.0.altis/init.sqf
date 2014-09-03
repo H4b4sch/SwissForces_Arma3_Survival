@@ -14,9 +14,7 @@ private ["_startPosLocale"];
 call compile preprocessFileLineNumbers "Scripts\startPos.sqf";
 
 // Global Variables
-if(isServer) then {
-	_startPosLocale = [] call fnc_FindGoodPos;
-};
+_startPosLocale = [] call fnc_FindGoodPos;
 var_startPos = _startPosLocale;
 
 // GLOBAL: At least one base established
@@ -34,8 +32,8 @@ if (!isDedicated) then {
 	TCB_AIS_PATH = "ais_injury\";
 	{[_x] call compile preprocessFile (TCB_AIS_PATH+"init_ais.sqf")} forEach (if (isMultiplayer) then {playableUnits} else {switchableUnits});
 };
-_respos = getPos player;
-_mrkr = createMarker ["respawn_west", _respos ];
+
+_mrkr = createMarker ["respawn_west", var_startPos ];
 _mrkr setMarkerShape "ICON";
 _mrkr setMarkerType "mil_box";
 _mrkr setMarkerColor "ColorBlue";
