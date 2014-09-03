@@ -24,6 +24,9 @@ var_startPos = _startPosLocale;
 // GLOBAL: At least one base established
 var_baseEstablished = false;
 
+// GLOBAL: Count of players
+var_numPlayers = count units group player;
+
 // Loot Spawner
 if (isServer) then {
 	fn_getBuildingstospawnLoot = compile preProcessFileLineNumbers "LootSpawner\fn_LSgetBuildingstospawnLoot.sqf"; 

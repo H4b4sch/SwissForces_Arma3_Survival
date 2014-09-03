@@ -15,13 +15,14 @@ removeVest _unit;
 removeUniform _unit;
 removeAllAssignedItems _unit;
 
-// Add uniform and a pistol
+// Add uniform, a pistol and a map
 _unit addUniform "U_B_CombatUniform_mcam";
 _unit addWeapon "hgun_P07_F";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
+_unit addWeapon "ItemMap";
 
 // If there is no base, teleport the player to the start position
 if(!var_baseEstablished) then {

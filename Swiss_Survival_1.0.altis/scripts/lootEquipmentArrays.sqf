@@ -57,7 +57,7 @@ arr_spawnAmmo = [arr_ammoTier0, arr_ammoTier1, arr_ammoTier2, arr_ammoTier3, arr
 
 // Objects Like the map and binoculars and stuff
 arr_objectTier0 = ["ItemWatch", "ItemRadio", "ItemCompass", "Binocular", "FirstAidKit"];
-arr_objectTier1 = ["ItemMap", "MineDetector", "Rangefinder", "NVGoggles", "ToolKit", "FirstAidKit"];
+arr_objectTier1 = ["MineDetector", "Rangefinder", "NVGoggles", "ToolKit", "FirstAidKit"];
 arr_objectTier2 = ["ItemGPS", "Medikit", "Laserdesignator", "B_UavTerminal"];
 
 arr_spawnObjects = [arr_objectTier0, arr_objectTier1, arr_objectTier2];
