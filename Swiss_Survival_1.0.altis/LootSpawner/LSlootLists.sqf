@@ -57,18 +57,18 @@ lootMagazine_list = [
 lootItem_list = [
 [ 0, [							// CIVIL
 "ItemWatch", "ItemRadio", "ItemCompass", "Binocular", "FirstAidKit", "optic_Aco", "acc_flashlight",
-"V_BandollierB_blk", "V_TacVest_blk", "ItemMap"
+"V_BandollierB_blk", "V_TacVest_blk"
 ]],[ 1, [						// MILITARY
-"ItemMap", "MineDetector", "Rangefinder", "NVGoggles", "ToolKit", "FirstAidKit",
+"MineDetector", "Rangefinder", "NVGoggles", "ToolKit", "FirstAidKit",
 "muzzle_snds_L", "muzzle_snds_M", "muzzle_snds_H", "optic_Aco", "optic_Aco_smg",
 									 "optic_Holosight", "acc_flashlight", "optic_Yorris", "muzzle_snds_acp",
 									 "V_BandollierB_blk", "V_TacVest_blk", "V_HarnessO_brn",
 									 "U_B_CombatUniform_mcam", "H_HelmetCrew_B", "H_HelmetB_desert"
 ]],[ 2, [						// INDUSTRIAL
-"ItemMap", "MineDetector", "Rangefinder", "NVGoggles", "ToolKit", "FirstAidKit", "FirstAidKit",
+"MineDetector", "Rangefinder", "NVGoggles", "ToolKit", "FirstAidKit", "FirstAidKit",
 "muzzle_snds_B", "muzzle_snds_H_MG", "optic_Arco", "optic_Holosight", "acc_flashlight", "optic_Yorris"
 ]],[ 3, [						// RESEARCH
-"ItemGPS", "Medikit", "Laserdesignator", "B_UavTerminal", "ItemMap", "Rangefinder", "optic_SOS"
+"ItemGPS", "Medikit", "Laserdesignator", "B_UavTerminal", "Rangefinder", "optic_SOS"
 ]]];
 
 //here place backpacks, parachutes and packed drones/stationary

@@ -128,9 +128,9 @@ _instanceNo = 0;
   // House Defending
   _numHouses = _x select 1;
   
-  if(var_numPlayers == 1) then {ceil(_numHouses = _numHouses * 0.5)};		// 1 Player  --> half of house units (rounded up)
-  if(var_numPlayers == 2) then {ceil(_numHouses = _numHouses * 0.66)};	// 2 Players --> 3/4 of house units (rounded up)
-  if(var_numPlayers == 3) then {ceil(_numHouses = _numHouses * 0.8)};		// 3 Players --> 4/5 of house units (rounded up)
+  if(var_numPlayers == 1) then {_numHouses = ceil(_numHouses * 0.5)};		// 1 Player  --> half of house units (rounded up)
+  if(var_numPlayers == 2) then {_numHouses = ceil(_numHouses * 0.66)};	// 2 Players --> 3/4 of house units (rounded up)
+  if(var_numPlayers == 3) then {_numHouses = ceil(_numHouses * 0.8)};		// 3 Players --> 4/5 of house units (rounded up)
   _offset = round(random(_numHouses / 2));	// Random Number from 0 to NumHouses/2
   _invertOffset = round(random(1)); // Get number from 0.0 to 1.0 and round it up or down
   if(_invertOffset >= 1) then {
