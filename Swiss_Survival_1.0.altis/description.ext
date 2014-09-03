@@ -4,8 +4,9 @@ onLoadMission = "Survive and Raise";
 //loadScreen = "";
 respawnTemplatesWest[] = {"MenuPosition"};
 
-
+// Some basic includes
 #include "playerActions\actions.hpp"
+#include "R3F_LOG\desc_include.h"
 
 // Revive
 respawn = 3;
@@ -24,15 +25,5 @@ class Header
 	maxPlayers=7;
 };
 
-class Params {
-
-	// Example Parameter
-	class EmtpyLine0 {
-		title = ":: Mission Settings";
-		values[]={0,0};
-		texts[]={ "",""};
-		default = 0;
-	};
-	
-
-};
+// Include the parameters
+//#include "cfg\params.hpp";

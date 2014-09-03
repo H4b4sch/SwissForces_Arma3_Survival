@@ -66,7 +66,7 @@ Buildingstoloot_list = [
 ["Land_i_Addon_04_V1_F", 0], 
 ["Land_i_Barracks_V1_F", 2],
 ["Land_i_Barracks_V2_F", 1],
-["Land_i_Garage_V1_F", 0], 
+//["Land_i_Garage_V1_F", 0], // USED AS VEHICLE PAD
 ["Land_i_Garage_V2_F", 0],
 ["Land_i_House_Big_01_V1_dam_F", 0], 
 ["Land_i_House_Big_01_V1_F", 0], 
@@ -86,7 +86,7 @@ Buildingstoloot_list = [
 ["Land_i_House_Small_02_V2_F", 0],
 ["Land_i_House_Small_02_V3_F", 0],
 ["Land_i_House_Small_03_V1_dam_F", 0], 
-["Land_i_House_Small_03_V1_F", 0], 
+//["Land_i_House_Small_03_V1_F", 0],  USED AS BASE BUILDING
 ["Land_i_Shed_Ind_F", 2],
 ["Land_i_Shop_01_V1_dam_F", 0], 
 ["Land_i_Shop_01_V1_F", 0], 

@@ -82,7 +82,6 @@ _removeFromCleanup = {
 while{true} do {
 
 	sleep 10;
-  { _x enableFatigue false; } forEach (units group player);
 	{	
 	    _unit = _x;
 	    
