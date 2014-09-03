@@ -230,9 +230,11 @@ _instanceNo = 0;
   									_housePatrols, _patrollingInfantry, _patrollingMotorized,
   									_patrollingArmor, _static, _patrollingHelicopters];*/
   
-	//_null = [["enemyBase" + str _instanceNo],[_housePatrols,1],[_patrollingInfantry,1],[_patrollingMotorized,2],[_patrollingArmor],[_static],[_patrollingHelicopters,0],[0,0,1000,EAST,TRUE]] call EOS_Spawn;
-	_null = [["enemyBase" + str _instanceNo],[0,1],[0,1],[0,2],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;
+	_null = [["enemyBase" + str _instanceNo],[_housePatrols,1],[_patrollingInfantry,1],[_patrollingMotorized,2],[_patrollingArmor],[_static],[_patrollingHelicopters,0],[0,0,1000,EAST,TRUE]] call EOS_Spawn;
+	//_null = [["enemyBase" + str _instanceNo],[0,1],[0,1],[0,2],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;
 	_instanceNo = _instanceNo + 1;
 } foreach arr_usedBases;
+
+{ _x enableFatigue false; } forEach (units group player);
 
 _null = execVM "scripts\loot.sqf";

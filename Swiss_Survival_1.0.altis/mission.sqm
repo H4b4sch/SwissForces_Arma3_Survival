@@ -166,7 +166,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.46666664;
 					text="p1";
-					init="this allowDamage false; this setCaptive true";
+					init="this enableFatigue false;";
 				};
 				class Item1
 				{
@@ -180,6 +180,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.46666664;
 					text="p2";
+					init="this enableFatigue false;";
 				};
 				class Item2
 				{
@@ -193,6 +194,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.33333331;
 					text="p4";
+					init="this enableFatigue false;";
 				};
 				class Item3
 				{
@@ -205,6 +207,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="p3";
+					init="this enableFatigue false";
 				};
 				class Item4
 				{
@@ -217,6 +220,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.2;
 					text="p6";
+					init="this enableFatigue false";
 				};
 				class Item5
 				{
@@ -230,7 +234,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.33333331;
 					text="p5";
-					init="(unitBackpack this) addItemCargo [""Medikit"", 1];";
+					init="this enableFatigue false";
 				};
 			};
 		};
