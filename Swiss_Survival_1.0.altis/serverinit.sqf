@@ -169,27 +169,30 @@ _instanceNo = 0;
   switch(_x select 0) do {
   	case "Airport": {
   		_patrollingArmor = 0;
-  		if(random(3) > 1.0) then { 									// 66% Chance to spawn 1 Armored
+  		if(random((var_numPlayers + 1)) > 1.0) then { 					// 1 Player = 50%, 3 Players = 75%, 6 Players = 86%
   			_patrollingArmor = 1;
   		};
   		
-  		_patrollingHelicopters = round(random(1));							// 50% chance for 1 helicopter
+  		if(var_numPlayers >= 3) then {
+  			_patrollingHelicopters = round(random(1));						// 50% chance for 1 helicopter
+  		};
+  		
   		_patrollingHelicopters = _patrollingHelicopters + 1;		// Add 1 helicopter
   		
-  		_static = 3;																						// 3 Static Weapons
+  		_static = ceil(var_numPlayers / 2);											// 1 - 3 Static Weapons
   	};
   	case "City": {
-  		_patrollingArmor = round(random(2));				  // Random 0 to 2
-  		_patrollingArmor = _patrollingArmor + 1;  	  // Add 1 (for atleast 1)
+  		_patrollingArmor = ceil(var_numPlayers / 2);	// Players: 1 / 2 = 1, 3 / 4 = 2, 5 / 6 = 3
+  		_patrollingArmor = _patrollingArmor + 1;  	  // Add 1
   		
-  		if(random(4) > 1.0) then {
-  			_patrollingHelicopters = round(random(1));	// 75% for 1 helicopter
+  		if(random((var_numPlayers + 2)) > 1.0) then { // 1 Player = 66%, 3 Players = 80%, 6 Players = 87.5%
+  			_patrollingHelicopters = round(random(1));	
   		};
   		
   		_static = 4;																	// 4 Static Weapons													
   	};
   	case "BigTown": {
-  		if(random(3) > 1.0) then { 										// 66% Chance to spawn 1 armor
+  		if(random((var_numPlayers + 2)) > 1.0) then { // 1 Player = 66%, 3 Players = 80%, 6 Players = 87.5%
   			_patrollingArmor = 1;
   		};
   		
@@ -197,17 +200,17 @@ _instanceNo = 0;
   			_patrollingHelicopters = 1;
   		};
   		
-  		_static = 3;																  // 3 Static Weapons
+  		_static = ceil(var_numPlayers / 2);											// 1 - 3 Static Weapons
   	};
   	case "Military": {
-  		_patrollingArmor = round(random(1));					// Random 0 to 1
+  		_patrollingArmor = round(random(ceil(var_numPlayers / 2)));					// Random 0 to Players: 1 / 2 = 1, 3 / 4 = 2, 5 / 6 = 3
   		_patrollingArmor = _patrollingArmor + 1;  		// Add 1 (for atleast 1)
   		
-  		if(random(3) > 1.0) then { 										// 66% Chance to spawn 1 helicopter
+  		if(random(2) > 1.0) then { 										// 50% Chance to spawn 1 helicopter
   			_patrollingHelicopters = 1;
   		};
   		
-  		_static = 5;															  	// 5 Static
+  		_static = 4;															  	// 4 Static
   	};
   	default {
   		_patrollingArmor = 0;
