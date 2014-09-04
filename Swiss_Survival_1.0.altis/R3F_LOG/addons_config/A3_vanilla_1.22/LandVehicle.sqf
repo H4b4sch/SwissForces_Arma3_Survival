@@ -22,6 +22,7 @@ R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 [
 	"Bus",
+	"Truck_F",
 	"Car_F"
 ];
 

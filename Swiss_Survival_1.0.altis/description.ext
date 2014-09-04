@@ -26,4 +26,4 @@ class Header
 };
 
 // Include the parameters
-//#include "cfg\params.hpp";
+#include "cfg\parameter.hpp"

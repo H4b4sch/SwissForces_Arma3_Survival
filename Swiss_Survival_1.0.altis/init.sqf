@@ -49,6 +49,9 @@ _mrkr setMarkerAlpha 1;
 // Load Functions
 FNC_GETDIRTO = compileFinal preprocessFileLineNumbers "scripts\getDirTo.sqf";
 
+// Add Sign-Placing Action
+_sitrep = [p1,"open_signs"] call BIS_fnc_addCommMenuItem;
+
 // Server Initialisation
 execVM "serverinit.sqf";
 

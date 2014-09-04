@@ -1,70 +1,75 @@
+_infantryBase = 0.4;
+_vehicleBase = 0.4;
+_infantryBase = "PAR_AI_SKILL_INFANTRY" call BIS_fnc_getParamValue;
+_vehicleBase = "PAR_AI_SKILL_VEHICLES" call BIS_fnc_getParamValue;
+
 // INFANTRY SKILL
 _InfskillSet = [
-0.25,        // aimingAccuracy
-0.45,        // aimingShake
-0.6,        // aimingSpeed
-0.4,         // spotDistance
-0.4,        // spotTime
+_infantryBase,        // aimingAccuracy
+_infantryBase + 0.2,        // aimingShake
+_infantryBase,        // aimingSpeed
+_infantryBase,         // spotDistance
+_infantryBase,        // spotTime
 1,        // courage
 1,        // reloadSpeed
 1,        // commanding
-1        // general
+_infantryBase        // general
 ];
 
 
 // ARMOUR SKILL
 _ArmSkillSet = [
-0.25,        // aimingAccuracy
-0.45,        // aimingShake
-0.6,        // aimingSpeed
-0.4,         // spotDistance
-0.4,        // spotTime
+_vehicleBase,        // aimingAccuracy
+_vehicleBase + 0.2,        // aimingShake
+_vehicleBase,        // aimingSpeed
+_vehicleBase,         // spotDistance
+_vehicleBase,        // spotTime
 1,        // courage
 1,        // reloadSpeed
 1,        // commanding
-1        // general
+_vehicleBase        // general
 ];
 
 
 // LIGHT VEHICLE skill
 _LigSkillSet = [
-0.25,        // aimingAccuracy
-0.45,        // aimingShake
-0.6,        // aimingSpeed
-0.4,         // spotDistance
-0.4,        // spotTime
+_vehicleBase,        // aimingAccuracy
+_vehicleBase + 0.2,        // aimingShake
+_vehicleBase,        // aimingSpeed
+_vehicleBase,         // spotDistance
+_vehicleBase,        // spotTime
 1,        // courage
 1,        // reloadSpeed
 1,        // commanding
-1        // general
+_vehicleBase        // general
 ];
 
 
 // HELICOPTER SKILL
 _AIRskillSet = [
-0.25,        // aimingAccuracy
-0.45,        // aimingShake
-0.6,        // aimingSpeed
-0.4,         // spotDistance
-0.4,        // spotTime
+_vehicleBase,        // aimingAccuracy
+_vehicleBase + 0.2,        // aimingShake
+_vehicleBase,        // aimingSpeed
+_vehicleBase + 0.1,         // spotDistance
+_vehicleBase + 0.2,        // spotTime
 1,        // courage
 1,        // reloadSpeed
 1,        // commanding
-1        // general
+_vehicleBase        // general
 ];
 
 
 // STATIC SKILL
 _STAskillSet = [
-0.25,        // aimingAccuracy
-0.45,        // aimingShake
-0.6,        // aimingSpeed
-0.4,         // spotDistance
-0.4,        // spotTime
+_vehicleBase,        // aimingAccuracy
+_vehicleBase + 0.2,        // aimingShake
+_vehicleBase,        // aimingSpeed
+_vehicleBase,         // spotDistance
+_vehicleBase,        // spotTime
 1,        // courage
 1,        // reloadSpeed
 1,        // commanding
-1        // general
+_vehicleBase        // general
 ];
 
 server setvariable ["INFskill",_InfskillSet];

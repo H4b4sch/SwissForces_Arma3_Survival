@@ -26,6 +26,6 @@ class CfgCommunicationMenu
     icon = "\a3\ui_f\data\gui\cfg\hints\Head_ca.paa";
     cursor = ""; // Custom cursor displayed when the item is selected
     enable = "1"; // Simple expression condition for enabling the item
-    removeAfterExpressionCall = 0; // 1 to remove the item after calling
+    removeAfterExpressionCall = 1; // 1 to remove the item after calling
   };
 };

@@ -157,14 +157,14 @@ _begintime = time;
 									};
 								};
 								
-								// Maybe add some defending units
+								// Maybe add some defending units (10% Chance)
 								if((random(100)) < 10) then {
 									_radiusMkr = ((round(random(20))) + 10);
 									_defendUnitsMarker = createMarker ["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex, _spwnPos];
 									_defendUnitsMarker setMarkerShape "ELLIPSE";
 									_defendUnitsMarker setMarkerSize [_radiusMkr, _radiusMkr];
 									_defendUnitsMarker setMarkerColor "ColorRed";
-									_defendUnitsMarker setMarkerAlpha 0;
+									_defendUnitsMarker setMarkerAlpha 1;
 									var_randomLootDefenseMkrIndex = var_randomLootDefenseMkrIndex + 1;
 									
 									_null = [["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex],[1,1],[1,1,66],[0,0],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;

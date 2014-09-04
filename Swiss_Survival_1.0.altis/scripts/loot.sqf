@@ -210,14 +210,14 @@ while{true} do {
 		// Check if we should let the player create a new base
 		// Array: 6,16,32,52,82,112,152,5000
 		if(var_PlayerProgress >= (_bonusBaseProgress select _bonusBaseIndex)) then {
-			_sitrep = [player,"establish_base"] call BIS_fnc_addCommMenuItem;
+			_sitrep = [p1,"establish_base"] call BIS_fnc_addCommMenuItem;
 			_bonusBaseIndex = _bonusBaseIndex + 1;
 		};
 		
 		// Check if we should let the player create a vehicle pad
 		// Array: 12,28,52,82,112,5000
 		if(var_PlayerProgress >= (_bonusRefitProgress select _bonusRefitIndex)) then {
-			_sitrep = [player,"establish_vehicle_refit"] call BIS_fnc_addCommMenuItem;
+			_sitrep = [p1,"establish_vehicle_refit"] call BIS_fnc_addCommMenuItem;
 			_bonusRefitIndex = _bonusRefitIndex + 1;
 		};
 	};
