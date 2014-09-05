@@ -1,28 +1,28 @@
 Author = "H4b4sch";
-onLoadName = "Swiss Survival";
+onLoadName = "Survival";
 onLoadMission = "Survive and Raise";
 //loadScreen = "";
 respawnTemplatesWest[] = {"MenuPosition"};
 
 // Some basic includes
-#include "playerActions\actions.hpp"
-#include "R3F_LOG\desc_include.h"
+#include "cfg\playeractions.hpp"
+#include "plugins\R3F_LOG\desc_include.h"
 
 // Revive
 respawn = 3;
 respawndelay = 10;
 class RscTitles {
-	#include "ais_injury\dialogs\rscTitlesAIS.hpp"
+	#include "plugins\ais_injury\dialogs\rscTitlesAIS.hpp"
 };
 class CfgFunctions {
-	#include "ais_injury\cfgFunctionsAIS.hpp"
+	#include "plugins\ais_injury\cfgFunctionsAIS.hpp"
 };
 
 class Header
 {
 	gameType=COOP;
 	minPlayers=1;
-	maxPlayers=7;
+	maxPlayers=6;
 };
 
 // Include the parameters

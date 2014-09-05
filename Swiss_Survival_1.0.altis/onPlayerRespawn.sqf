@@ -23,9 +23,3 @@ _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addWeapon "ItemMap";
-
-// If there is no base, teleport the player to the start position
-if(!var_baseEstablished) then {
-	_position = var_startPos findEmptyPosition [0,100];
-	_unit setPos _position;
-};
