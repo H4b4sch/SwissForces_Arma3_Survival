@@ -86,9 +86,11 @@ _instanceNo = 0;
   		_patrollingArmor = ceil(var_numPlayers / 2);	// Players: 1 / 2 = 1, 3 / 4 = 2, 5 / 6 = 3
   		_patrollingArmor = _patrollingArmor + 1;  	  // Add 1
   		
-  		if(random((var_numPlayers + 2)) > 1.0) then { // 1 Player = 66%, 3 Players = 80%, 6 Players = 87.5%
-  			_patrollingHelicopters = round(random(1));	
-  		};
+  		if(var_PlayerProgress >= 12) then {							// Only if over 12 progress
+	  		if(random((var_numPlayers + 2)) > 1.0) then { // 1 Player = 66%, 3 Players = 80%, 6 Players = 87.5%
+	  			_patrollingHelicopters = round(random(1));	
+	  		};
+	  	};
   		
   		_static = 4;																	// 4 Static Weapons													
   	};
@@ -97,19 +99,23 @@ _instanceNo = 0;
   			_patrollingArmor = 1;
   		};
   		
-  		if(random(1.5) > 1.0) then { 								  // 33% Chance to spawn 1 helicopter
-  			_patrollingHelicopters = 1;
-  		};
+  		if(var_PlayerProgress >= 16) then {
+	  		if(random(1.5) > 1.0) then { 								  // 33% Chance to spawn 1 helicopter
+	  			_patrollingHelicopters = 1;
+	  		};
+	  	};
   		
-  		_static = ceil(var_numPlayers / 2);											// 1 - 3 Static Weapons
+  		_static = ceil(var_numPlayers / 2);						// 1 - 3 Static Weapons
   	};
   	case "Military": {
   		_patrollingArmor = round(random(ceil(var_numPlayers / 2)));					// Random 0 to Players: 1 / 2 = 1, 3 / 4 = 2, 5 / 6 = 3
   		_patrollingArmor = _patrollingArmor + 1;  		// Add 1 (for atleast 1)
   		
-  		if(random(2) > 1.0) then { 										// 50% Chance to spawn 1 helicopter
-  			_patrollingHelicopters = 1;
-  		};
+  		if(var_PlayerProgress >= 12) then {
+	  		if(random(2) > 1.0) then { 										// 50% Chance to spawn 1 helicopter
+	  			_patrollingHelicopters = 1;
+	  		};
+	  	};
   		
   		_static = 4;															  	// 4 Static
   	};
@@ -139,7 +145,7 @@ _instanceNo = 0;
   									_housePatrols, _patrollingInfantry, _patrollingMotorized,
   									_patrollingArmor, _static, _patrollingHelicopters];*/
   
-	//_null = [["enemyBase" + str _instanceNo],[_housePatrols,1],[_patrollingInfantry,1],[_patrollingMotorized,2],[_patrollingArmor],[_static],[_patrollingHelicopters,0],[0,0,1000,EAST,TRUE]] call EOS_Spawn;
-	_null = [["enemyBase" + str _instanceNo],[0,1],[0,1],[0,2],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;
+	_null = [["enemyBase" + str _instanceNo],[_housePatrols,1],[_patrollingInfantry,1],[_patrollingMotorized,2],[_patrollingArmor],[_static],[_patrollingHelicopters,0],[0,0,1000,EAST,TRUE]] call EOS_Spawn;
+	//_null = [["enemyBase" + str _instanceNo],[0,1],[0,1],[0,2],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;
 	_instanceNo = _instanceNo + 1;
 } foreach arr_usedBases;

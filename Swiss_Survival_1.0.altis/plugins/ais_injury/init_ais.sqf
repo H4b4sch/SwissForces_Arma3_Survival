@@ -1,3 +1,4 @@
+// by psycho - dont edit!
 if (isDedicated && {isPlayer _unit}) exitWith {};				// no player unit controlled on a dedicated server
 if (!isDedicated && {!hasInterface}) exitWith {};				// no headless client
 _unit = _this select 0;
@@ -14,8 +15,9 @@ _unit setVariable ["tcb_ais_aisInit",true];
 	if (playerSide == _side) then {
 		if (_in_agony) then {
 			_unit playActionNow "agonyStart";
+			_unit setCaptive true;
 			if (local player) then {[side _unit,"HQ"] sideChat format ["%1 is down and needs help at %2",name _unit, mapGridPosition _unit]};
-
+			
 			if (isNil {_unit getVariable ["fa_action", Nil]}) then {
 				_fa_action = _unit addAction [format["<t color='#F00000'>First Aid to %1</t>",name _unit],{_this spawn tcb_fnc_firstAid},_unit,100,false,true,"",
 					"{not isNull (_target getVariable _x)} count ['healer','dragger'] == 0 && {alive _target} && {vehicle _target == _target}
@@ -40,7 +42,8 @@ _unit setVariable ["tcb_ais_aisInit",true];
 		} else {
 			if (tcb_ais_bloodParticle) then {[_unit] call tcb_fnc_resetBleeding};
 			_unit playActionNow "agonyStop";
-
+			_unit setCaptive false;
+			
 			_unit removeAction (_unit getVariable "fa_action");
 			_unit removeAction (_unit getVariable "drag_action");
 			_unit removeAction (_unit getVariable "carry_action");
@@ -94,6 +97,19 @@ tcb_ais_medequip_array = [];
 tcb_ais_areBleeding = [];
 _unit setVariable ["callHelpDelay", 0];
 
+/*
+// work around since BI-devs are went to stupid 3.0...		<-- no longer needed
+_unit addEventHandler ["respawn", {
+	[_this select 0] spawn {
+		_unit = _this select 0;
+		_timeend = time + 2;
+		waitUntil {!BIS_respawnInProgress || {time > _timeend}};
+		_unit removeAllEventHandlers "handleDamage";
+		_handledamage = _unit addEventHandler ["HandleDamage",{_this call ((_this select 0) getVariable "ais_handleDamage")}];
+	};
+}];
+*/
+
 if (tcb_ais_show_3d_icons == 1) then {
 	_icons = addMissionEventHandler ["Draw3D", {
 		{
@@ -126,6 +142,13 @@ if (isPlayer _unit) then {
 	waitUntil {sleep 0.3; !isNull (findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call tcb_fnc_keyUnbind}];
 };
+
+
+/*	// add in a later version...
+if (count tcb_ais_addVIP > 0) then {
+	{[_x] execVM (TCB_AIS_PATH+"init_ais.sqf")} forEach tcb_ais_addVIP;
+};
+*/
 
 if (tcb_ais_dead_dialog == 1) then {
 	if (isNil "respawndelay") then {

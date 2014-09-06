@@ -157,8 +157,9 @@ _begintime = time;
 									};
 								};
 								
-								// Maybe add some defending units (10% Chance)
-								if((random(100)) < 10) then {
+								// Maybe add some defending units (numPlayers x 10% Chance)
+								_chance = var_numPlayers * 10;
+								if((random(100)) < 15) then {
 									_radiusMkr = ((round(random(20))) + 10);
 									_defendUnitsMarker = createMarker ["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex, _spwnPos];
 									_defendUnitsMarker setMarkerShape "ELLIPSE";

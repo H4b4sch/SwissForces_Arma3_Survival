@@ -8,12 +8,6 @@ fn_getBuildingstospawnLoot = compile preProcessFileLineNumbers "plugins\LootSpaw
 LSdeleter = compile preProcessFileLineNumbers "plugins\LootSpawner\LSdeleter.sqf";
 execVM "plugins\LootSpawner\Lootspawner.sqf";
 
-// Arma 3 Wounding System on dedicated server
-if (!isDedicated) then {
-	TCB_AIS_PATH = "plugins\ais_injury\";
-	{[_x] call compile preprocessFile (TCB_AIS_PATH+"init_ais.sqf")} forEach (if (isMultiplayer) then {playableUnits} else {switchableUnits});
-};
-
 // Generate targets
 call compile preprocessFileLineNumbers "init\common\generateTargets.sqf";
 

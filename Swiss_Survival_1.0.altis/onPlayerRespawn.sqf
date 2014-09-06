@@ -23,3 +23,6 @@ _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addMagazine "16Rnd_9x21_Mag";
 _unit addWeapon "ItemMap";
+
+// Disable fatigue
+_unit enableFatigue false;

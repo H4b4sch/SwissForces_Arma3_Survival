@@ -22,11 +22,11 @@ _animChangeEVH = _helper addEventhandler ["AnimChanged", {
 	_helper = _this select 0;
 	_anim = _this select 1;
 	if (primaryWeapon _helper != "") then {
-		//if (time >= tcb_animDelay) then {tcb_helperStopped = true; Hint "has stopped cause weapon rised";};
+		if (time >= tcb_animDelay) then {tcb_helperStopped = true; Hint "has stopped cause weapon rised";};
 	} else {
 		if (!(_anim in ["AinvPknlMstpSlayWrflDnon_1"])) then {
-			//if (time >= tcb_animDelay) then {tcb_helperStopped = true};
-			//Hint "has stopped";
+			if (time >= tcb_animDelay) then {tcb_helperStopped = true};
+			Hint "has stopped";
 		};
 	};	
 }];

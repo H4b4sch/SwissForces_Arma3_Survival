@@ -1,7 +1,8 @@
 // Client initialisation
-
-// Disable fatigue for the player (reduntant to initserver.sqf, just to be sure)
-player enableFatigue false;
+waitUntil {!isNull player};
 
 // Add healing script
 _null = [] execVM "funct\common\healAction.sqf";
+
+// Disable FUCKING fatigue
+_null = [] execVM "funct\common\disableFatigue.sqf";

@@ -68,7 +68,7 @@ if (isPlayer _healer) then {
 		_healer = _this select 0;
 		_anim = _this select 1;
 		if (primaryWeapon _healer != "") then {
-			//if (time >= tcb_animDelay) then {tcb_healerStopped = true};
+			if (time >= tcb_animDelay) then {tcb_healerStopped = true};
 		} else {
 			if (_anim in ["amovpknlmstpsnonwnondnon","amovpknlmstpsraswlnrdnon"]) then {
 				_healer playAction "medicStart";
@@ -103,7 +103,6 @@ while {
 	&& {alive _injuredperson}
 	&& {(_healer distance _injuredperson) < 2}
 	&& {!(_healer getVariable "tcb_ais_agony")}
-	&& {!tcb_healerStopped}
 } do {
 	sleep 0.5;
 	if (isPlayer _healer) then {["Applying First Aid",((time - _time) / (_damage)) min 1] spawn tcb_fnc_progressbar};
@@ -134,25 +133,21 @@ call tcb_fnc_garbage;
 
 _old_damage = damage _injuredperson;
 
-if (!tcb_healerStopped) then {
-	_isMedic = _healer call tcb_fnc_isMedic;
-	_healed = switch (true) do {
-		case (_isMedic && {(items _healer) find "Medikit" > -1}) : {0.05};
-		case (_isMedic && {(items _healer) find "FirstAidKit" >= 0}) : {_healer removeItem "FirstAidKit"; 0.25};
-		case (!_isMedic && {(items _healer) find "FirstAidKit" >= 0}) : {_healer removeItem "FirstAidKit"; _injuredperson setHit ["hands", 0.9]; 0.4};
-		default {_injuredperson setHit ["legs", 0.4]; _injuredperson setHit ["hands", 0.9]; 0.6};
-	};
+_isMedic = _healer call tcb_fnc_isMedic;
+_healed = switch (true) do {
+	case (_isMedic && {(items _healer) find "Medikit" > -1}) : {0.05};
+	case (_isMedic && {(items _healer) find "FirstAidKit" >= 0}) : {_healer removeItem "FirstAidKit"; 0.25};
+	case (!_isMedic && {(items _healer) find "FirstAidKit" >= 0}) : {_healer removeItem "FirstAidKit"; _injuredperson setHit ["hands", 0.9]; 0.4};
+	default {_injuredperson setHit ["legs", 0.4]; _injuredperson setHit ["hands", 0.9]; 0.6};
+};
 
-	if (time - _time > _damage) then {
-		//_old_damage = _injuredperson getVariable "tcb_ais_damageStore";
-		if (_healed > _old_damage) then {
-			_injuredperson setDamage _old_damage;
-		} else {
-			_injuredperson setDamage _healed;
-		};
-		_injuredperson setVariable ["tcb_ais_damageStore", damage _injuredperson];
-		_injuredperson setVariable ["tcb_ais_agony", false, true];
+if (time - _time > _damage) then {
+	//_old_damage = _injuredperson getVariable "tcb_ais_damageStore";
+	if (_healed > _old_damage) then {
+		_injuredperson setDamage _old_damage;
+	} else {
+		_injuredperson setDamage _healed;
 	};
-} else {
-	["You has stopped the healing process.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText;
+	_injuredperson setVariable ["tcb_ais_damageStore", damage _injuredperson];
+	_injuredperson setVariable ["tcb_ais_agony", false, true];
 };

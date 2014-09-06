@@ -1,3 +1,23 @@
+// Revive
+respawn = 3;
+respawndelay = 10;
+disabledAI=0;
+joinUnassigned = 0;
+enableDebugConsole = 1;
+allowFunctionsLog = 1;
+//#include "plugins\=BTC=_revive\=BTC=_respawn.h"
+
+
+class CfgFunctions
+{
+	#include "plugins\ais_injury\cfgFunctionsAIS.hpp"
+};
+	
+class RscTitles 
+{
+	#include "plugins\ais_injury\dialogs\rscTitlesAIS.hpp"
+};
+
 Author = "H4b4sch";
 onLoadName = "Survival";
 onLoadMission = "Survive and Raise";
@@ -7,16 +27,6 @@ respawnTemplatesWest[] = {"MenuPosition"};
 // Some basic includes
 #include "cfg\playeractions.hpp"
 #include "plugins\R3F_LOG\desc_include.h"
-
-// Revive
-respawn = 3;
-respawndelay = 10;
-class RscTitles {
-	#include "plugins\ais_injury\dialogs\rscTitlesAIS.hpp"
-};
-class CfgFunctions {
-	#include "plugins\ais_injury\cfgFunctionsAIS.hpp"
-};
 
 class Header
 {
