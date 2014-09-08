@@ -78,13 +78,13 @@ lootItem_list = [
 //								backpacklist: list of backpack class names
 lootBackpack_list = [
 [ 0, [							// CIVIL
-"B_AssaultPack_blk"
+"B_AssaultPack_blk", "B_FieldPack_Base"
 ]],[ 1, [						// MILITARY
-"B_AssaultPack_blk"
+"B_AssaultPack_blk", "B_TacticalPack_mcamo"
 ]],[ 2, [						// INDUSTRIAL
-"B_AssaultPack_blk"
+"B_AssaultPack_blk", "B_Carryall_mcamo"
 ]],[ 3, [						// RESEARCH
-"B_AssaultPack_blk"
+"B_AssaultPack_blk", "B_Carryall_mcamo"
 ]]];
 
 //here place any other objects(ex.: Land_Basket_F, Box_East_Wps_F, Land_Can_V3_F, ...)

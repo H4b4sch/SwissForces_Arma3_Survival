@@ -165,7 +165,7 @@ _begintime = time;
 									_defendUnitsMarker setMarkerShape "ELLIPSE";
 									_defendUnitsMarker setMarkerSize [_radiusMkr, _radiusMkr];
 									_defendUnitsMarker setMarkerColor "ColorRed";
-									_defendUnitsMarker setMarkerAlpha 1;
+									_defendUnitsMarker setMarkerAlpha 0;
 									var_randomLootDefenseMkrIndex = var_randomLootDefenseMkrIndex + 1;
 									
 									_null = [["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex],[1,1],[1,1,66],[0,0],[0],[0],[0,0],[0,0,350,EAST,TRUE]] call EOS_Spawn;

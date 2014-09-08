@@ -10,7 +10,6 @@
   # PARAMETERS #
     0	[String]: The defense variable name
     1	[Object]: The center (construction center)
-    2	[Number]: The construction radius
 	
   # RETURNED VALUE #
 	None
@@ -30,7 +29,6 @@
 
 _variable = _this select 0;
 _center = _this select 1;
-_center_distance = _this select 2;
 
 VAR_STRUCTPLACED = false;
 VAR_STRUCTCANCELED = false;
@@ -44,7 +42,7 @@ _local = _variable createVehicleLocal getPos player;
 _distance_structure = 20;
 
 // Disable collision with near entities
-{_local disableCollisionWith _x} forEach (_center nearEntities (_center_distance+500));
+{_local disableCollisionWith _x} forEach (_center nearEntities (500));
 
 // Add actions to place and cancel
 _action = player addAction ["<t color='#9CF863'>Build</t>", "VAR_STRUCTPLACED = true;"];
@@ -72,8 +70,8 @@ player removeAction _action2;
 
 
 if !(VAR_STRUCTCANCELED) then {	
-	
 	// If it was not canceled build the building
+	//			 Class Name						Position							  Direction
 	_null = [_variable, [_pos select 0, _pos select 1], getDir _local] execVM "funct\playerActions\BuildBuilding.sqf";
 }else{
 	

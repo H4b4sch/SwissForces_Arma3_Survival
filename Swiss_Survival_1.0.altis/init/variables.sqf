@@ -14,3 +14,7 @@ call compile preprocessFileLineNumbers "funct\loot\lootObjectArrays.sqf";			// L
 // Player related
 var_numPlayers = count units group player;	// Count of players
 var_PlayerProgress = 0;											// Current Progress
+var_playerIndex = 0;												// Only used in Client initialisation to set the index of each player
+
+// Misc
+var_eventHandlerIconIndex = 0;	// Index of 3d icons event handlers

@@ -87,6 +87,8 @@ fnc_spawnLoot = {
 		_veh = _vehicle createVehicle (_spawnPos);
 		clearWeaponCargoGlobal _veh;
 		clearMagazineCargoGlobal _veh;
+		clearBackpackCargoGlobal _veh;
+		clearItemCargoGlobal _veh;
 	};
 	// END VEHICLES --------------------------------------------------------------------------------
 	

@@ -9,11 +9,8 @@
 	
   # PARAMETERS #
     0	[String]: The defense variable name
-    1	[Side]: The Side which requested it
-    2	[Array]: The position of the defense
-    3	[Number]: The direction of the defense
-    4	[Boolean]: Determine if an alignment is needed for walls
-    5	{Optionnal} [Boolean]: Determine if the defense shall be manned or not
+    1	[Array]: The position of the defense
+    2	[Number]: The direction of the defense
 	
   # RETURNED VALUE #
 	[Object]: The constructed defense
@@ -63,7 +60,7 @@ switch (_var) do {
 		// Set Flag at least 1 base established
 		var_baseEstablished = true;
 	};
-	case "Land_i_Garage_V1_F": {	// Base
+	case "Land_i_Garage_V1_F": {	// Land Vehicle Refit
 		// Create Marker for area
 		_mkr = createMarker ["vehicleArea" + str var_vehicleRefitMarkerIndex, _position];
 		_mkr setMarkerShape "RECTANGLE";
@@ -90,7 +87,7 @@ switch (_var) do {
 		
 		var_vehicleRefitMarkerIndex = var_vehicleRefitMarkerIndex + 1;
 	};
-	case "Land_HelipadCivil_F": {	// Base
+	case "Land_HelipadCivil_F": {	// Air Vehicle Refit
 		// Create Marker for area
 		_mkr = createMarker ["vehicleArea" + str var_vehicleRefitMarkerIndex, _position];
 		_mkr setMarkerShape "RECTANGLE";

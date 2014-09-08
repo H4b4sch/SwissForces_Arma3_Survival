@@ -27,6 +27,7 @@ respawnTemplatesWest[] = {"MenuPosition"};
 // Some basic includes
 #include "cfg\playeractions.hpp"
 #include "plugins\R3F_LOG\desc_include.h"
+#include "cfg\dialogs.hpp"
 
 class Header
 {

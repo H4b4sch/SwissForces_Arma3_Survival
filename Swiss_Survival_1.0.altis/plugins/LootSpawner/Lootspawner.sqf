@@ -34,10 +34,10 @@ _chperSpot = 15;						//Chance (in %) if a spot gets loot. Will be considered be
 //									%object 	: % chance to spawn an world object on spot
 //-------------- A VALUE OF '-1' RESULTS IN NO LOOT FOR THIS CLASS AND TYPE ----------------
 spawnClassChance_list = [
-[0, 40, 15, 30, 5, 10],	// civil
-[1, 30, 20, 20, 5, 25],	// military
-[2, 20, 15, 30, 10, 25],	// industrial
-[3, 30, 15, 30, 5, 20]	// research
+[0, 35, 15, 25, 20, 5],	// civil
+[1, 35, 20, 25, 20, 0],	// military
+[2, 25, 20, 30, 15, 10],	// industrial
+[3, 35, 20, 35, 5, 5]	// research
 ];
 
 //"exclcontainer_list" single array of container classnames to NOT to delete if filled
