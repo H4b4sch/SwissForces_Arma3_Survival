@@ -1,6 +1,6 @@
 // Revive
 respawn = 2;
-respawndelay = 10;
+respawndelay = 3;
 disabledAI=0;
 joinUnassigned = 0;
 enableDebugConsole = 1;
