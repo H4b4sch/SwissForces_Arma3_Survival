@@ -1,6 +1,4 @@
 class Params {
-
-	// Example Parameter
 	class headerAI {
 		title = ":: ENEMY SETTINGS ::";
 		values[]={0,0};
@@ -19,5 +17,17 @@ class Params {
 		texts[]={"10%","20%","40%","60%","80%","100%"};
 		default =0.2;
 	};
-
+// Example Parameter
+	class headerGeneral {
+		title = ":: GENERAL SETTINGS ::";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;
+	};
+	class PAR_ADVANCED_START {
+		title = "Advanced Start";
+		values[]={0,1};
+		texts[]={"Disabled","Enabled"};
+		default =0;
+	};
 };

@@ -14,6 +14,8 @@ call compile preprocessFileLineNumbers "init\common\generateTargets.sqf";
 // Prepare enemies in targets
 call compile preprocessFileLineNumbers "init\common\prepareEnemies.sqf";
 
+// Execute Loot function
+_null = execVM "funct\loot\loot.sqf";
 
 // Add Communication entry to create nametags
 _sitrep = [p1,"nametags"] call BIS_fnc_addCommMenuItem;
@@ -27,6 +29,11 @@ call compile  preprocessfile "cfg\submenus.sqf";
 
 // Disable Fatigue for all players
 { _x enableFatigue false; } forEach (units group player);
+
+// Advanced Start
+if("PAR_ADVANCED_START" call BIS_fnc_getParamValue == 1) then {
+	_null = [] execVM "init\common\advancedStart.sqf";
+};
 
 // Start the repetive CleanUp
 [

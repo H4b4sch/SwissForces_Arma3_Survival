@@ -260,7 +260,7 @@ BTC_fnc_PVEH =
 			private ["_array_injured"];
 			_array_injured = (_array select 1);
 			{
-				if (name player == name _x) then {unAssignVehicle player;player action ["eject", vehicle player];_spawn = [] spawn {sleep 0.5;player switchMove "ainjppnemstpsnonwrfldnon";};};
+				if (name player == name _x) then {unAssignVehicle player;player action ["eject", vehicle player];};
 			} foreach _array_injured;
 		};
 		case (_type == 5) : 
@@ -286,7 +286,7 @@ BTC_fnc_PVEH =
 			{
 				(_this select 0) switchMove "AinjPfalMstpSnonWrflDnon_carried_down";
 				sleep 3;
-				if (format ["%1",(_this select 0) getVariable "BTC_need_revive"] == "1") then {(_this select 0) switchMove "ainjppnemstpsnonwrfldnon";};
+				//if (format ["%1",(_this select 0) getVariable "BTC_need_revive"] == "1") then {(_this select 0) switchMove "ainjppnemstpsnonwrfldnon";};
 			};
 		};
 		case (_type == 7) : 
@@ -481,21 +481,54 @@ BTC_player_killed =
 		_pos = getPosATL vehicle _body;
 		if (BTC_lifes != 0 || BTC_active_lifes == 0) then
 		{
+			player setVariable ["BTC_need_revive",1,true];
+			
+			// Save players gear
+			BTC_gear = [player] call BTC_get_gear;
+			
+			// If alive, remove gear and set saved gear
 			WaitUntil {Alive player};
+			_null = [player, BTC_gear] call BTC_set_gear;
+			
+			/*
+			// Save the gear
+			_uniform = uniform player;
+			_vest = vest player;
+			_headGear = headGear player;
+			_backPack = backpack player;
+			_weapons = weapons player;
+			_magazines = magazines player;
+			_items = items player;
+			_goggles = goggles player;
+			
+			// Remove whole gear
+			removeAllWeapons player;
+			removeAllItems player;
+			removeBackpack player;
+			removeGoggles player;
+			removeHeadgear player;
+			removeVest player;
+			removeUniform player;
+			removeAllAssignedItems player;
+			
+			// Set old gear
+			player addUniform _uniform;
+			player addVest _vest;
+			player addBackPack _backPack;
+			player addHeadGear _headGear;
+			{player addMagazine _x; hint str _x; sleep 0.5;} forEach _magazines;
+			{player addWeapon _x; hint str _x; sleep 0.5;} forEach _weapons;
+			*/
+			
 			detach player;
 			//player setPos [getMarkerPos BTC_respawn_marker select 0, getMarkerPos BTC_respawn_marker select 1, 5000];
 			_body_marker = player;
 			player setcaptive true;
 			BTC_r_camera_nvg = false;
 			BTC_killed_pveh = [2,_body_marker];publicVariable "BTC_killed_pveh";player allowDamage false;
-			player setVariable ["BTC_need_revive",1,true];
-			player switchMove "AinjPpneMstpSnonWrflDnon";
+			//player switchMove "AinjPpneMstpSnonWrflDnon";
 			_actions = [] spawn BTC_assign_actions;
-			if (BTC_respawn_gear == 1) then 
-			{
-				_gear = [player,BTC_gear] spawn BTC_set_gear;
-			};
-			WaitUntil {animationstate player == "ainjppnemstpsnonwrfldnon"};
+			//WaitUntil {animationstate player == "ainjppnemstpsnonwrfldnon"};
 			sleep 2;
 			player setDir _dir;
 			player setVelocity [0,0,0];
@@ -521,7 +554,7 @@ BTC_player_killed =
 			{
 				if (BTC_black_screen == 0 && BTC_disable_respawn == 0) then {disableSerialization;_dlg = createDialog "BTC_respawn_button_dialog";};
 				if (BTC_black_screen == 1 && BTC_disable_respawn == 0 && !Dialog) then {_dlg = createDialog "BTC_respawn_button_dialog";};
-				BTC_display_EH = (findDisplay 46) displayAddEventHandler ["KeyDown", "_anim = [] spawn {sleep 1;player switchMove ""AinjPpneMstpSnonWrflDnon"";};"];
+				//BTC_display_EH = (findDisplay 46) displayAddEventHandler ["KeyDown", "_anim = [] spawn {sleep 1;player switchMove ""AinjPpneMstpSnonWrflDnon"";};"];
 			}
 			else
 			{
@@ -634,6 +667,10 @@ BTC_player_respawn =
 		deTach player;
 		player setVariable ["BTC_need_revive",0,true];
 		closeDialog 0;
+		
+		// Set starting gear
+		_null = [player] execVM "funct\common\gearStart.sqf";
+		
 		if (BTC_black_screen == 0) then {titleText ["", "BLACK OUT"];};
 		sleep 0.2;
 		titleText ["", "BLACK FADED"];
@@ -932,39 +969,13 @@ BTC_r_get_list =
 	private ["_leader"];
 	_list_str = ["BASE"];
 	_list_name = [BTC_r_base_spawn];
-	_side = "";_array = [];
-	switch (true) do
-	{
-		case (BTC_side == west) : {_side = "BTC_mobile_west";_array = BTC_vehs_mobile_west_str;};
-		case (BTC_side == east) : {_side = "BTC_mobile_east";_array = BTC_vehs_mobile_east_str;};
-		case (str(BTC_side) == "guer") : {_side = "BTC_mobile_guer";_array = BTC_vehs_mobile_guer_str;};
-		case (str(BTC_side) == "civ") : {_side = "BTC_mobile_civ";_array = BTC_vehs_mobile_civ_str;};
-	};
-	{
-		_var = _x;
-		{
-			if ((typeName (_x getvariable _side)) == "STRING") then
-			{
-				if ((_x getvariable _side) == _var) then {_list_name = _list_name + [_x];_list_str = _list_str + [(_x getvariable _side)];};
-			};
-		} foreach vehicles;
-	} foreach _array;
-	switch (true) do
-	{
-		case (BTC_dlg_on_respawn == 2) : 
-		{
-			_leader = leader group player;
-			if (_leader != player && (format ["%1", _leader getVariable "BTC_need_revive"] == "0")) then {_list_name = _list_name + [_leader];_list_str = _list_str + [name _leader];};
-		};
-		case (BTC_dlg_on_respawn == 3) : 
-		{
-			{if (_x != player && (format ["%1", _x getVariable "BTC_need_revive"] == "0")) then {_list_name = _list_name + [_x];_list_str = _list_str + [name _x];};} foreach (units group player);
-		};
-		case (BTC_dlg_on_respawn == 4) : 
-		{
-			{if (_x != player && side _x == BTC_side && (format ["%1", _x getVariable "BTC_need_revive"] == "0")) then {_list_name = _list_name + [_x];_list_str = _list_str + [name _x];};} foreach allUnits;
-		};
-	};
+	
+	// Add custom bases to list
+	// _list_name = List with objects
+	// _list_str = Entry names
+	_list_name = _list_name + BTC_CUSTOM_respawn_points;
+	_list_str = _list_str + BTC_CUSTOM_respawn_points_str;
+	
 	_list = [_list_str,_list_name];
 	_list
 };
@@ -974,23 +985,12 @@ BTC_r_load =
 	_list_name = _list select 0;
 	_list_units = _list select 1;
 	_n = 0;_side = "";_array = [];
-	switch (true) do
+	
+	lbClear 119;
 	{
-		case (BTC_side == west) : {_side = "BTC_mobile_west";_array = BTC_vehs_mobile_west_str;};
-		case (BTC_side == east) : {_side = "BTC_mobile_east";_array = BTC_vehs_mobile_east_str;};
-		case (str(BTC_side) == "guer") : {_side = "BTC_mobile_guer";_array = BTC_vehs_mobile_guer_str;};
-		case (str(BTC_side) == "civ") : {_side = "BTC_mobile_civ";_array = BTC_vehs_mobile_civ_str;};
-	};
-	if (!isNull BTC_r_mobile_selected) then {if ((_list_name find (BTC_r_mobile_selected getVariable _side)) == -1 && (_list_name find (name BTC_r_mobile_selected)) == -1) then {BTC_r_mobile_selected = _list_units select 0;};};
-	if (count _list_name != count BTC_r_list) then 
-	{
-		lbClear 119;
-		{
-			_lb = lbAdd [119,_x];
-			if (!isNull BTC_r_mobile_selected) then {if ((BTC_r_mobile_selected getVariable _side) == _x || name BTC_r_mobile_selected == _x) then {lbSetCurSel [119,_lb];};};
-			if (isNull BTC_r_mobile_selected) then {lbSetCurSel [119,_lb];_n = _list_name find _x;BTC_r_mobile_selected = _list_units select _n;};
-		} foreach _list_name;BTC_r_list = _list_name;
-	} else {};
+		_lb = lbAdd [119,_x];
+	} foreach _list_name;BTC_r_list = _list_name;
+	
 	true
 };
 BTC_r_create_dialog_mobile =
@@ -1036,6 +1036,13 @@ BTC_r_create_dialog_mobile =
 BTC_r_apply = 
 {
 	BTC_r_chosen = true;
+	
+	_list = call BTC_r_get_list;
+	_list_units = _list select 1;
+	if(lbCurSel 119 != 0) then {
+		BTC_r_mobile_selected = _list_units select lbCurSel 119;
+	};
+	
 	closeDialog 0;
 	titleText ["", "BLACK OUT"];
 	sleep 0.5;
@@ -1046,8 +1053,17 @@ BTC_r_apply =
 	{
 		private ["_mobile"];
 		_mobile = BTC_r_mobile_selected;
-		if (speed _mobile > 2) then {titleText ["Mobile is moving...", "BLACK FADED"];WaitUntil {speed _mobile > 2 || !Alive _mobile};};
-		if (!Alive _mobile) then {_dlg = [] spawn BTC_r_create_dialog_mobile;} else {player attachTo [_mobile,[3,3,0]];sleep 0.1;deTach player;player setVelocity [0,0,0];player setpos [(getpos _mobile select 0) + (random 5),(getpos _mobile select 1) + (random 5),(getpos _mobile select 2)];sleep 0.1;player playMoveNow "amovpercmstpsraswrfldnon";};
+		//if (speed _mobile > 2) then {titleText ["Mobile is moving...", "BLACK FADED"];WaitUntil {speed _mobile > 2 || !Alive _mobile};};
+		//if (!Alive _mobile) then {_dlg = [] spawn BTC_r_create_dialog_mobile;} else {player attachTo [_mobile,[3,3,0]];sleep 0.1;deTach player;player setVelocity [0,0,0];player setpos [(getpos _mobile select 0) + (random 5),(getpos _mobile select 1) + (random 5),(getpos _mobile select 2)];sleep 0.1;player playMoveNow "amovpercmstpsraswrfldnon";};
+		player attachTo [_mobile,[3,3,0]];
+		sleep 0.1;
+		deTach player;
+		player setVelocity [0,0,0];
+		hint str getpos _mobile;
+		sleep 2;
+		player setpos [(getpos _mobile select 0) + (random 5),(getpos _mobile select 1) + (random 5),(getpos _mobile select 2)];
+		sleep 0.1;
+		player playMoveNow "amovpercmstpsraswrfldnon";
 	}
 	else
 	{

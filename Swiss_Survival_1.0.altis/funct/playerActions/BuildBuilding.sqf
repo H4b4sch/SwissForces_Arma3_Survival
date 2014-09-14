@@ -44,18 +44,28 @@ _object setPos _position;
 // Treatment of "special" buildings (pun intended)
 switch (_var) do {
 	case "Land_i_House_Small_03_V1_F": {	// Base
-		// Create Marker
-		_mkr = createMarker ["respawn_west" + str var_baseMarkerIndex, _position];
 		
+		// Create Marker and add to building variable
+		_mkr = createMarker ["respawn_west" + str var_baseMarkerIndex, _position];
 		_mkr setMarkerShape "ICON";
 		_mkr setMarkerType "b_unknown";
 		_mkr setMarkerText "Base";
+		_object setVariable ["baseMarker", _mkr];
 		
+		// Add to the list of respawn-points (BTC-Revive)
+		BTC_CUSTOM_respawn_points = BTC_CUSTOM_respawn_points + [_object];
+		BTC_CUSTOM_respawn_points_str = BTC_CUSTOM_respawn_points_str + ["Base " + str var_baseMarkerIndex];
+		publicVariable "BTC_CUSTOM_respawn_points";
+		publicVariable "BTC_CUSTOM_respawn_points_str";
+		
+		// Keep the index number to the base
+		_object setVariable ["baseIndex",var_baseMarkerIndex];
+		
+		// Add Action to rename base
+		_id = _object addAction ["Rename Base", "createDialog 'name_base';"];
+		
+		// Add to the index
 		var_baseMarkerIndex = var_baseMarkerIndex + 1;
-		
-		if(!var_baseEstablished) then {
-			[west, 0] call BIS_fnc_removeRespawnPosition;
-		};
 		
 		// Set Flag at least 1 base established
 		var_baseEstablished = true;

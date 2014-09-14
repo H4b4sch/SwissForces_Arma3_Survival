@@ -141,6 +141,9 @@ fnc_spawnLoot = {
 		clearWeaponCargoGlobal _ammobox;
 		clearMagazineCargoGlobal _ammobox;
 		
+		// Disable damage for the ammobox
+		_ammobox allowDamage false;
+		
 		// Fill the Ammobox
 		_equipmentArraysIndex = 0;
 		for "_i" from 0 to count(_indexObjects) step 1 do {

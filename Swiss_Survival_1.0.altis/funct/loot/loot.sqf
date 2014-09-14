@@ -36,9 +36,9 @@ private ["_index", "_type", "_lootedBases", "_markerName", "_pos", "_radius",
 _lootedBases = [];
 
 // Arrays for buildings
-_bonusBaseProgress = [4,12,20,32,52,82,112,152,5000];
-_bonusLandRefitProgress = [8,12,28,52,82,112,5000];
-_bonusAirRefitProgress = [12,24,36,48,66,82,5000];
+_bonusBaseProgress = [4,14,26,42,68,92,112,152,5000];
+_bonusLandRefitProgress = [8,18,32,52,82,112,144,186,5000];
+_bonusAirRefitProgress = [14,24,40,68,96,132,5000];
 _bonusBaseIndex = 0;
 _bonusLandRefitIndex = 0;
 _bonusAirRefitIndex = 0;
@@ -161,11 +161,14 @@ while{true} do {
   					//                     Weapons          Ammo         Objects     Attachs    Vest   Ruck   Clothes
   					[[_pos],500,[0,0],[[0,100,80,20,0],[100,60,10,0,0],[100, 20, 0],[66, 20, 0],[0,33],[20,5],[50,5]]] call fnc_spawnLoot;											// Spawn Box with Equipment
   					//                     Weapons          Ammo         Objects   Attachs   Vest  Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,90,60,10,0],[100,80,25,10,0],[50, 10, 0],[25, 5, 0],[50,0],[15,0],[33,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
-  					[[_pos],500,[0,0],[[0,90,60,10,0],[100,75,25,0,0],[50, 10, 0],[25, 5, 0],[50,0],[15,0],[33,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,90,60,10,0],[100,80,25,10,0],[50, 10, 0],[25, 5, 0],[50,0],[15,0],[33,0]]] call fnc_spawnLoot;												// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,80,50,10,0],[100,75,25,0,0],[50, 10, 0],[25, 5, 0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,20,10,0,0],[50,25,5,0,0],[90, 25, 0],[80, 10, 0],[20,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
   					// Objects
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,40,15,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,5,0]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
@@ -212,9 +215,9 @@ while{true} do {
 		
 		// BUILDING BONUSES
 		/*
-		_bonusBaseProgress = [4,12,20,32,52,82,112,152,5000];
-		_bonusLandRefitProgress = [8,12,28,52,82,112,5000];
-		_bonusAirRefitProgress = [12,24,36,48,66,82,5000];
+		_bonusBaseProgress = [4,14,26,42,68,92,112,152,5000];
+		_bonusLandRefitProgress = [8,18,32,52,82,112,144,186,5000];
+		_bonusAirRefitProgress = [14,24,40,68,96,132,5000];
 		*/
 		
 		// Check if we should let the player create a new base
