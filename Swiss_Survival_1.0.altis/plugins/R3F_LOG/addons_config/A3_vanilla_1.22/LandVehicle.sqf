@@ -4,7 +4,8 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 	"MRAP_02_base_F",
 	"MRAP_03_base_F",
 	"Truck_F",
-	"B_APC_Tracked_01_CRV_F"
+	"B_APC_Tracked_01_CRV_F",
+	"Offroad_01_base_F"
 ];
 
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
@@ -13,7 +14,8 @@ R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 	"MRAP_02_base_F",
 	"MRAP_03_base_F",
 	"Truck_F",
-	"B_APC_Tracked_01_CRV_F"
+	"B_APC_Tracked_01_CRV_F",
+	"Offroad_01_base_F"
 ];
 
 R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
@@ -65,7 +67,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	["Kart_01_Base_F", 40],
 	["Quadbike_01_base_F", 40],
-	["UGV_01_base_F", 100]
+	["UGV_01_base_F", 80]
 ];
 
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +

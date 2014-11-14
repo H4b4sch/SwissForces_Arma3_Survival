@@ -4,7 +4,6 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 
 R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 [
-	"Ship_F"
 ];
 
 R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
