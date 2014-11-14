@@ -191,7 +191,7 @@ _instanceNo = 0;
   		// There are no helicopters
   		_patrollingHelicopters = 0;
   		
-  		// There are random 1 or 2
+  		// There are random 1 or 2 statics
   		_static = ceil(random(2));
   		
   		// The chance for motorized infantry is depending on the number of players
@@ -212,8 +212,8 @@ _instanceNo = 0;
   		// There are no helicopters
   		_patrollingHelicopters = 0;	
   		
-  		// Random 0 to 2 Static
-  		_static = round(random(2));
+  		// Random 0 to 1 Static
+  		_static = round(random(1));
   		
   		// There are no motorized infantry here
   		_patrollingMotorized = 0;
