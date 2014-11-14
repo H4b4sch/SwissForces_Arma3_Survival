@@ -82,7 +82,7 @@ arr_enemyBaseMarkers set [64 ,  ["City", 10, 200, 200, [16652.75,16104.21]]];
 arr_enemyBaseMarkers set [65 ,  ["Houses", 1, 80, 80, [16869.5,15472.743]]];
 arr_enemyBaseMarkers set [66 ,  ["City", 12, 300, 300, [18799.42,16615.91]]];
 arr_enemyBaseMarkers set [67 ,  ["Houses", 2, 120, 120, [19445.127,15393.78]]];
-arr_enemyBaseMarkers set [68 ,  ["BigTown", 4, 6, 6, [16343.113,17256.924]]];
+arr_enemyBaseMarkers set [68 ,  ["BigTown", 4, 160, 160, [16343.113,17256.924]]];
 arr_enemyBaseMarkers set [69 ,  ["Military", 2, 160, 160, [16076.945,16991.584]]];
 arr_enemyBaseMarkers set [70 ,  ["Military", 0, 120, 160, [15404.012,16013.882]]];
 arr_enemyBaseMarkers set [71 ,  ["SmallTown", 3, 160, 160, [14601.868,16832.48]]];

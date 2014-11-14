@@ -157,23 +157,23 @@ _begintime = time;
 									};
 								};
 								
-								// Maybe add some defending units (15% Chance)
-								if((random(100)) < 15) then {
+								// Maybe add some defending units (5% Chance)
+								if((random(100)) < 5) then {
+									
+									// The radiant of the marker ranges from 10 to 30 meters
 									_radiusMkr = ((round(random(20))) + 10);
-									_patrollingVehicle = 0;
-									_static = 0;
 									
-									// Add Vehicles if progress > 14, 20% chance
-									if(var_playerProgress > 14 && (random(100)) < 20) then {
-										_patrollingVehicle = 1;
-									};
+									// Create actual marker
+									_marker = createMarker ["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex, _spwnPos];
+									_marker setMarkerShape "ELLIPSE";
+									_marker setMarkerSize [_radiusMkr, _radiusMkr];
+									_marker setMarkerColor "ColorRed";
+									_marker setMarkerAlpha 1;
+																																																														//1
+									_null = [["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex],[1,1],[1,1,66],[0,0],[0],[0],[0,0],[0,0,300,EAST,TRUE]] call EOS_Spawn;
 									
-									// If progress > 12 add a static
-									if(var_playerProgress > 12) then {
-										_static = 1;
-									};
-									
-									_null = [["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex],[1,1],[1,1,66],[_patrollingVehicle,1],[0],[_static],[0,0],[0,1,300,EAST,TRUE]] call EOS_Spawn;
+									// Count up index
+									var_randomLootDefenseMkrIndex = var_randomLootDefenseMkrIndex + 1;
 								};
 								
 								//1 category loot only per place so -> exit For

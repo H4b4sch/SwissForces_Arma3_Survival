@@ -71,17 +71,18 @@ while{true} do {
   					// Vehicles
   					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,100,60,20,15,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;						// Spawn a Helicopter
   					[[_pos],500,[0,100,95,85,75,55,50,40,35,25,0,0,0,0,0,23,0,18,8],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;		// Spawn a vehicle
-  					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,0,66,60,50,45,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;					// Spawn a plane or additional helicopter with 66% chance
+  					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,0,75,60,50,45,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;					// Spawn a plane or additional helicopter with 75% chance
   					//                    Weapons           Ammo          Objects      Attachs     Vest Rck Clothes
-  					[[_pos],500,[0,0],[[0,100,95,25,0],[0,100,80,30,15],[100, 80, 10],[80, 30, 0],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;								// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,50,10],[0,0,100,60,10],[100, 80, 25],[100, 50, 20],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;								// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,25,0],[0,0,100,50,15],[100, 80, 10],[80, 50, 0],[0,0],[0,0],[0,0]],[0,0]] call fnc_spawnLoot;								// Spawn Box with Equipment
   					//                      Weapons           Ammo       Objects Attachs  Vest    Rck   Clothes
-  					[[_pos],500,[0,0],[[0,100,75,20,0],[100,80,50,20,0],[50,15,0],[0,0],[75,25],[25,5],[60,40]],[0,0]] call fnc_spawnLoot;																					// Spawn Box with Clothes
+  					[[_pos],500,[0,0],[[0,0,100,25,5],[0,0,90,30,5],[50,15,0],[0,0],[75,25],[25,5],[60,40]],[0,0]] call fnc_spawnLoot;																					// Spawn Box with Clothes
   					// Objects
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,90,40,15,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,75,30,5,0]] call fnc_spawnLoot;																// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;																// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;																// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;																// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,75,50]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,80,40,0]] call fnc_spawnLoot;																// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,75,25,0]] call fnc_spawnLoot;																// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,60,20,0]] call fnc_spawnLoot;																// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,60,15]] call fnc_spawnLoot;																// Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;																// Defending Object
   				};
   				case "Military": {
@@ -92,44 +93,49 @@ while{true} do {
   					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,30,2,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;								    // Spawn light heli with 30% chance
   					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,80,50,40,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;								  // Spawn drone with 80% chance
   					//                     Weapons          Ammo         Objects      Attachs    Vest    Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,0,100,50,5],[0,0,100,80,30],[0, 80, 50],[0, 100, 33],[100,50],[50,20],[0,50]]] call fnc_spawnLoot;								  // Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,0,100,50],[0,0,0,100,50],[100, 80, 50],[0, 100, 75],[100,50],[50,20],[0,50]]] call fnc_spawnLoot;								  // Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,0,100,25],[0,0,100,80,30],[0, 100, 50],[0, 100, 50],[100,50],[50,20],[0,50]]] call fnc_spawnLoot;								  // Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,60,10],[0,0,100,75,25],[0, 100, 25],[0, 100, 25],[100,50],[50,20],[0,50]]] call fnc_spawnLoot;								  // Spawn Box with Equipment
   					//                     Weapons          Ammo         Objects     Attachs    Vest  Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,100,80,20,5],[0,100,60,25,10],[0, 50, 10],[0, 50, 5],[20,5],[50,0],[50,0]]] call fnc_spawnLoot;											// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,50,5],[0,100,60,25,10],[0, 50, 10],[0, 50, 5],[20,5],[50,0],[50,0]]] call fnc_spawnLoot;											// Spawn Box with Equipment
   					// Objects
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,80,50,25]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,80,50,10]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,50,25,5]] call fnc_spawnLoot;																// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,20,5]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,75,25,10,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,0,100,50]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,80,25]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,50,25]] call fnc_spawnLoot;																// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,75,25]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,75,50,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,75,50,25,0]] call fnc_spawnLoot;															// Defending Object
   				};
   				case "City": {
   					// Make Progress
   					var_PlayerProgress = var_PlayerProgress + 10;
-  					[[_pos],500,[0,0,100,90,70,55,55,40,5,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;					  // Spawn heavy or armored vehicle
+  					[[_pos],500,[0,0,100,90,70,55,55,40,10,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;					  // Spawn heavy or armored vehicle
   					[[_pos],500,[100,90,0,40,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;					    // Spawn unarmed vehicle
   					[[_pos],500,[0,100,0,0,80,0,60,0,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;								// Spawn support / cargo vehicle
   					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,50,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;								    // Spawn unarmed light heli with 50% chance
   					//                     Weapons          Ammo         Objects      Attachs     Vest   Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,100,90,10,0],[100,90,50,10,0],[0, 100, 40],[100, 45, 5],[0,95],[80,10],[80,40]]] call fnc_spawnLoot;									// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,50,25],[0,0,100,50,25],[0, 100, 40],[0, 100, 25],[0,95],[80,10],[80,40]]] call fnc_spawnLoot;									// Spawn Box with Equipment
   					//                     Weapons          Ammo         Objects     Attachs     Vest    Ruck  Clothes
-  					[[_pos],500,[0,0],[[0,100,75,25,0],[100,90,40,10,5],[100, 50, 0],[80, 20, 0],[100,0],[50,0],[100,0]]] call fnc_spawnLoot;									// Spawn Box with Equipment
-  					//                                 Weapons          Ammo       Objects      Attachs    Vest   Ruck  Clothes
-  					[[_pos],500,[0,0],[[0,50,0,0,0],[100,60,20,0,0],[100, 50, 10],[50, 10, 0],[25,0],[25,0],[60,10]]] call fnc_spawnLoot;											// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,90,20],[0,0,0,100,50],[100, 75, 25],[0, 80, 0],[100,0],[50,0],[100,0]]] call fnc_spawnLoot;									// Spawn Box with Equipment
+  					//                     Weapons          Ammo       Objects      Attachs    Vest   Ruck  Clothes
+  					[[_pos],500,[0,0],[[0,0,100,75,25],[0,0,100,75,25],[100, 50, 10],[0, 50, 10],[25,0],[25,0],[60,10]]] call fnc_spawnLoot;											// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,50,10],[0,0,0,80,40],[100, 50, 10],[0, 50, 10],[25,0],[25,0],[60,10]]] call fnc_spawnLoot;											// Spawn Box with Equipment
   					// Objects
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,80,50,10]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,60,30,5]] call fnc_spawnLoot;															  // Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,75,50]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,75,50]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,50,25]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,75,25]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,25,10]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,40,20]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,50,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,50,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,75,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,50,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,0,100,25,0]] call fnc_spawnLoot;															// Defending Object
   				};
   				case "BigTown": {
   					// Make Progress
@@ -138,19 +144,19 @@ while{true} do {
   					[[_pos],500,[0,100,70,40,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;					    // Spawn unarmed or armed light vehicle
   					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;								    // Spawn unarmed light heli with 25% chance
   					//                      Weapons          Ammo         Objects      Attachs     Vest   Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,100,85,10,0],[100,80,40,10,0],[100, 50, 0],[100, 35, 0],[0,65],[50,0],[80,20]]] call fnc_spawnLoot;									// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,25,5],[0,0,100,60,0],[100, 50, 25],[100, 35, 0],[0,65],[50,0],[80,20]]] call fnc_spawnLoot;									// Spawn Box with Equipment
   					//                      Weapons          Ammo         Objects   Attachs   Vest   Ruck   Clothes
-  					[[_pos],500,[0,0],[[100,80,60,10,0],[100,60,20,0,0],[66, 10, 0],[25, 5, 0],[90,0],[25,0],[80,20]]] call fnc_spawnLoot;												// Spawn Box with Equipment
-  					//                      Weapons        Ammo        Objects    Attachs   Vest  Rck  Clothes
-  					[[_pos],500,[0,0],[[0,80,20,0,0],[80,40,10,0,0],[100, 0, 0],[20, 5, 0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;														// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,100,80,0],[0,0,100,75,0],[66, 10, 0],[25, 5, 0],[90,0],[25,0],[80,20]]] call fnc_spawnLoot;												// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,80,40,0],[0,0,50,20,0],[50, 10, 0],[25, 5, 0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,0,80,50,0],[0,0,80,40,0],[100, 25, 10],[80, 10, 0],[20,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
   					// Objects
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,60,30,5]] call fnc_spawnLoot;															  // Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,25,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,10,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,10,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,10,0]] call fnc_spawnLoot;															// Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,50,10,0]] call fnc_spawnLoot;															// Defending Object
   				};
   				case "SmallTown": {
   					// Make Progress
@@ -159,17 +165,17 @@ while{true} do {
   					[[_pos],500,[0,75,45,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;					      // Spawn unarmed or armed light vehicle, 75%
   					[[_pos],500,[0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;								    // Spawn unarmed light heli with 5% chance
   					//                     Weapons          Ammo         Objects     Attachs    Vest   Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,100,80,20,0],[100,60,10,0,0],[100, 20, 0],[66, 20, 0],[0,33],[20,5],[50,5]]] call fnc_spawnLoot;											// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,100,80,20,0],[0,100,50,10,0],[100, 25, 5],[66, 20, 0],[0,33],[20,5],[50,5]]] call fnc_spawnLoot;											// Spawn Box with Equipment
   					//                     Weapons          Ammo         Objects   Attachs   Vest  Ruck   Clothes
-  					[[_pos],500,[0,0],[[0,90,60,10,0],[100,80,25,10,0],[50, 10, 0],[25, 5, 0],[50,0],[15,0],[33,0]]] call fnc_spawnLoot;												// Spawn Box with Equipment
-  					[[_pos],500,[0,0],[[0,80,50,10,0],[100,75,25,0,0],[50, 10, 0],[25, 5, 0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
-  					[[_pos],500,[0,0],[[0,20,10,0,0],[50,25,5,0,0],[90, 25, 0],[80, 10, 0],[20,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,90,60,10,0],[0,100,25,10,0],[50, 10, 0],[25, 5, 0],[50,0],[15,0],[33,0]]] call fnc_spawnLoot;												// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,80,50,10,0],[0,90,50,0,0],[50, 10, 0],[25, 5, 0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[0,25,10,0,0],[0,50,25,5,0],[90, 25, 0],[80, 10, 0],[20,0],[0,0],[0,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
   					// Objects
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,40,15,0]] call fnc_spawnLoot;															  // Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,5,0]] call fnc_spawnLoot;															  // Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
-  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,80,25,10,0]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,50,10,0]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,25,0,0]] call fnc_spawnLoot;															  // Defending Object
+  					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[0,100,20,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
@@ -180,9 +186,9 @@ while{true} do {
   					var_PlayerProgress = var_PlayerProgress + 2;
   					[[_pos],500,[100,66,0,15,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]] call fnc_spawnLoot;					    // Spawn unarmed vehicle
   					//                     Weapons          Ammo         Objects     Attachs   Vest   Rck  Clothes
-  					[[_pos],500,[0,0],[[100,85,20,0,0],[100,85,20,0,0],[100, 25, 0],[50, 5, 0],[10,0],[50,5],[20,0]]] call fnc_spawnLoot;												// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[100,85,25,0,0],[100,85,20,0,0],[100, 25, 0],[50, 5, 0],[10,0],[50,5],[20,0]]] call fnc_spawnLoot;												// Spawn Box with Equipment
   					//                     Weapons        Ammo       Objects     Attachs   Vest   Ruck  Clothes
-  					[[_pos],500,[0,0],[[100,80,25,0,0],[100,80,25,0,0],[50, 10, 0],[50, 0, 0],[75,25],[10,0],[20,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[100,80,10,0,0],[100,80,25,0,0],[50, 10, 0],[50, 0, 0],[75,25],[10,0],[20,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
   					// Objects
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,75,30,5,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,10,0,0]] call fnc_spawnLoot;															  // Defending Object
@@ -194,9 +200,9 @@ while{true} do {
   					// Make Progress
   					var_PlayerProgress = var_PlayerProgress + 1;
   					//                    Weapons         Ammo       Objects     Attachs   Vest   Rck  Clothes
-  					[[_pos],500,[0,0],[[75,20,5,0,0],[100,50,10,0,0],[80, 15, 0],[25, 0, 0],[0,0],[5,0],[25,0]]] call fnc_spawnLoot;												  // Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[100,75,5,0,0],[100,50,10,0,0],[80, 15, 0],[25, 0, 0],[0,0],[5,0],[25,0]]] call fnc_spawnLoot;												  // Spawn Box with Equipment
   					//                    Weapons         Ammo      Objects      Attachs   Vest   Ruck  Clothes
-  					[[_pos],500,[0,0],[[25,10,0,0,0],[100,45,5,0,0],[100, 10, 0],[25, 0, 0],[0,0],[50,5],[25,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
+  					[[_pos],500,[0,0],[[100,50,0,0,0],[100,45,5,0,0],[100, 10, 0],[25, 0, 0],[0,0],[50,5],[25,0]]] call fnc_spawnLoot;													// Spawn Box with Equipment
   					// Objects
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,50,0,0,0]] call fnc_spawnLoot;															  // Defending Object
   					[[_pos],500,[0,0],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[100,25,0,0,0]] call fnc_spawnLoot;															  // Defending Object
@@ -215,9 +221,9 @@ while{true} do {
 		
 		// BUILDING BONUSES
 		/*
-		_bonusBaseProgress = [4,14,26,42,68,92,112,152,5000];
-		_bonusLandRefitProgress = [8,18,32,52,82,112,144,186,5000];
-		_bonusAirRefitProgress = [14,24,40,68,96,132,5000];
+		_bonusBaseProgress = [4,20,32,56,82,112,152,5000];
+		_bonusLandRefitProgress = [8,22,38,52,82,112,144,186,5000];
+		_bonusAirRefitProgress = [14,32,52,68,112,152,5000];
 		*/
 		
 		// Check if we should let the player create a new base

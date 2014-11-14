@@ -9,9 +9,9 @@ allowFunctionsLog = 1;
 
 Author = "H4b4sch";
 onLoadName = "Survival";
-onLoadMission = "Survive and Raise";
-//loadScreen = "";
-//respawnTemplatesWest[] = {"MenuPosition"};
+onLoadMission = "Fight to the last cartridge. An when all ammunition is gone? Next, cold steel.";
+loadScreen = "src\loading.jpg";
+overviewPicture = "src\loading.jpg";
 
 // Some basic includes
 #include "cfg\playeractions.hpp"

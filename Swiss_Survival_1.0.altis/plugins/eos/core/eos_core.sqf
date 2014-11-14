@@ -66,7 +66,7 @@ if (!(getmarkercolor _mkr == "colorblack"))then {
 		if (_cache) then {
 				_cacheGrp=format ["HP%1",_counter];
 				_units=_eosActivated getvariable _cacheGrp;	
-						_aSize=[_units,_units];
+						_aSize=[1,1];
 						_aMin=_aSize select 0;
 							if (_debug)then{player sidechat format ["ID:%1,restore - %2",_cacheGrp,_units];};
 							};

@@ -137,12 +137,9 @@ fnc_spawnLoot = {
 		};
 		
 		// Make Ammobox
-		_ammobox = createVehicle ["Box_NATO_Wps_F", _spawnPos, [], 0, "CAN_COLLIDE"];
+		_ammobox = createVehicle ["Box_NATO_Wps_F", _spawnPos, [], 0, "NONE"];
 		clearWeaponCargoGlobal _ammobox;
-		clearMagazineCargoGlobal _ammobox;
-		
-		// Disable damage for the ammobox
-		_ammobox allowDamage false;
+		clearMagazineCargoGlobal _ammobox;		
 		
 		// Fill the Ammobox
 		_equipmentArraysIndex = 0;
@@ -180,16 +177,16 @@ fnc_spawnLoot = {
 							
 							// Set num of magazines spawned
 							_objectSpawnCount = 0;
-							_objectSpawnCount = round(random(8)); // 0 to 4
-							_objectSpawnCount = _objectSpawnCount + 4; // Add 4 --> 4 to 8
+							_objectSpawnCount = round(random(4)); // 0 to 4
+							_objectSpawnCount = _objectSpawnCount + 2; // Add 2 --> 2 to 6
 							
 							_ammobox addMagazineCargoGlobal [_magazineItem, _objectSpawnCount];
 						};
 						case 1:	{// Ammo
 							// Set num of magazines spawned
 							_objectSpawnCount = 0;
-							_objectSpawnCount = round(random(8)); // 0 to 6
-							_objectSpawnCount = _objectSpawnCount + 4; // Add 4 --> 4 to 10
+							_objectSpawnCount = round(random(4)); // 0 to 4
+							_objectSpawnCount = _objectSpawnCount + 6; // Add 6 --> 6 to 10
 							
 							_ammobox addMagazineCargoGlobal [_object, _objectSpawnCount];
 						};
@@ -199,8 +196,8 @@ fnc_spawnLoot = {
 						default {
 							// Set num of magazines spawned
 							_objectSpawnCount = 0;
-							_objectSpawnCount = round(random(8)); // 0 to 2
-							_objectSpawnCount = _objectSpawnCount + 4; // Add 1 --> 1 to 3
+							_objectSpawnCount = round(random(4)); // 0 to 4
+							_objectSpawnCount = _objectSpawnCount + 6; // Add 6 --> 6 to 10
 							
 							_ammobox addItemCargoGlobal [_object, _objectSpawnCount];
 						};
@@ -216,6 +213,9 @@ fnc_spawnLoot = {
 		_marker setMarkerType "mil_dot";
 		_marker setMarkerAlpha 1;
 		var_lootMarkerIndex = var_lootMarkerIndex + 1;
+		
+		// Disable Damage for the ammobox
+		_ammobox allowDamage false;
 		
 		// Create vehicle on pos
 		//diag_log format ["SpawnPos: %1", _spawnPos];

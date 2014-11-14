@@ -10,9 +10,7 @@ R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 
 R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 [
-	"Heli_Light_02_base_F",
-	"Heli_Transport_01_base_F",
-	"Heli_Transport_02_base_F"
+	"Helicopter"
 ];
 
 R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
