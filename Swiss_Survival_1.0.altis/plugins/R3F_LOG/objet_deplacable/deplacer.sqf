@@ -433,6 +433,7 @@ else
 					_joueur removeAction _action_rapprocher;
 					
 					_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];
+					
 				}
 				// Echec d'obtention de l'objet
 				else

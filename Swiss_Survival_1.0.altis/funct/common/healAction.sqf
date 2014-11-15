@@ -1,3 +1,6 @@
+_madeQuickHealAction = 0;
+_quickHealAction = 0;
+
 while{true} do{
 	
 	// Add Quick Heal Action
@@ -13,8 +16,8 @@ while{true} do{
 	};
 	
 	// Always remove AGM bleeding and pain
-	_unit setVariable ["AGM_Pain", nil, true];
-	_unit setVariable ["AGM_Bleeding", nil, true];
+	player setVariable ["AGM_Pain", nil, true];
+	player setVariable ["AGM_Bleeding", nil, true];
 
 	sleep 0.5;
 };

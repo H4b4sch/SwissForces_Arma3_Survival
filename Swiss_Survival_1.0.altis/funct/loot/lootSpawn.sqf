@@ -141,6 +141,10 @@ fnc_spawnLoot = {
 		clearWeaponCargoGlobal _ammobox;
 		clearMagazineCargoGlobal _ammobox;		
 		
+		// Disable Damage for the ammobox
+		//_ammobox allowDamage false;
+		_ammobox AddEventHandler ["HandleDamage", {false}];
+		
 		// Fill the Ammobox
 		_equipmentArraysIndex = 0;
 		for "_i" from 0 to count(_indexObjects) step 1 do {
@@ -213,9 +217,6 @@ fnc_spawnLoot = {
 		_marker setMarkerType "mil_dot";
 		_marker setMarkerAlpha 1;
 		var_lootMarkerIndex = var_lootMarkerIndex + 1;
-		
-		// Disable Damage for the ammobox
-		_ammobox allowDamage false;
 		
 		// Create vehicle on pos
 		//diag_log format ["SpawnPos: %1", _spawnPos];

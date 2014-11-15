@@ -72,19 +72,19 @@ switch (_var) do {
 	};
 	case "Land_i_Garage_V1_F": {	// Land Vehicle Refit
 		// Create Marker for area
-		_mkr = createMarker ["vehicleArea" + str var_vehicleRefitMarkerIndex, _position];
+		/*_mkr = createMarker ["vehicleArea" + str var_vehicleRefitMarkerIndex, _position];
 		_mkr setMarkerShape "RECTANGLE";
 		_mkr setMarkerSize [5,5];
 		_mkr setMarkerColor "ColorWEST";
 		_mkr setMarkerAlpha 1;
 		_mkr setMarkerDir getDir player;
-		_mkr setMarkerPos getMarkerPos _mkr; // Synchronize among MP
+		_mkr setMarkerPos getMarkerPos _mkr; // Synchronize among MP*/
 		
 		// Create Marker for Icon
 		_mkr = createMarker ["vehicleIcon" + str var_vehicleRefitMarkerIndex, _position];
 		_mkr setMarkerShape "ICON";
 		_mkr setMarkerType "b_motor_inf";
-		_mkr setMarkerText "Land Refit";
+		//_mkr setMarkerText "Land Repair";
 		_mkr setMarkerAlpha 1;
 		_mkr setMarkerDir getDir player;
 		_mkr setMarkerPos getMarkerPos _mkr; // Synchronize among MP
@@ -99,19 +99,19 @@ switch (_var) do {
 	};
 	case "Land_HelipadCivil_F": {	// Air Vehicle Refit
 		// Create Marker for area
-		_mkr = createMarker ["vehicleArea" + str var_vehicleRefitMarkerIndex, _position];
+		/*_mkr = createMarker ["vehicleArea" + str var_vehicleRefitMarkerIndex, _position];
 		_mkr setMarkerShape "RECTANGLE";
 		_mkr setMarkerSize [5,5];
 		_mkr setMarkerColor "ColorWEST";
 		_mkr setMarkerAlpha 1;
 		_mkr setMarkerDir getDir player;
-		_mkr setMarkerPos getMarkerPos _mkr; // Synchronize among MP
+		_mkr setMarkerPos getMarkerPos _mkr; // Synchronize among MP*/
 		
 		// Create Marker for Icon
 		_mkr = createMarker ["vehicleIcon" + str var_vehicleRefitMarkerIndex, _position];
 		_mkr setMarkerShape "ICON";
-		_mkr setMarkerType "b_motor_inf";
-		_mkr setMarkerText "Air Refit";
+		_mkr setMarkerType "b_air";
+		//_mkr setMarkerText "Air Refit";
 		_mkr setMarkerAlpha 1;
 		_mkr setMarkerDir getDir player;
 		_mkr setMarkerPos getMarkerPos _mkr; // Synchronize among MP
