@@ -1,7 +1,7 @@
-_infantryBase = 0.4;
-_vehicleBase = 0.4;
-_infantryBase = "PAR_AI_SKILL_INFANTRY" call BIS_fnc_getParamValue;
-_vehicleBase = "PAR_AI_SKILL_VEHICLES" call BIS_fnc_getParamValue;
+_infantryBase = 0.2;
+_vehicleBase = 0.2;
+//_infantryBase = "PAR_AI_SKILL_INFANTRY" call BIS_fnc_getParamValue;
+//_vehicleBase = "PAR_AI_SKILL_VEHICLES" call BIS_fnc_getParamValue;
 
 // INFANTRY SKILL
 _InfskillSet = [
