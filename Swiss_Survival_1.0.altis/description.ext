@@ -1,7 +1,7 @@
 // Revive
 respawn = 2;
 respawndelay = 3;
-disabledAI=0;
+disabledAI=1;
 joinUnassigned = 0;
 enableDebugConsole = 1;
 allowFunctionsLog = 1;
@@ -12,7 +12,6 @@ onLoadName = "Survival";
 onLoadMission = "Fight to the last cartridge. An when all ammunition is gone? Next, cold steel.";
 loadScreen = "src\loading.jpg";
 overviewPicture = "src\loading.jpg";
-disabledAI = 1;
 
 // Some basic includes
 #include "cfg\playeractions.hpp"
