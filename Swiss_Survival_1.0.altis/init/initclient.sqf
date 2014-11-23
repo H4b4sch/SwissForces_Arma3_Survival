@@ -8,7 +8,7 @@ _null = [] execVM "funct\common\healAction.sqf";
 _null = [] execVM "funct\common\disableFatigue.sqf";
 
 // If this is the Alpha Squad Leader (player 1)
-if (var_playerIndex == 0) then {
+if ((str player) == "p1") then {
 	// Add Communication entry to create nametags
 	//_sitrep = [p1,"nametags"] call BIS_fnc_addCommMenuItem;
 	player addAction ["Nametag", {createDialog 'nametag_custom'}];
