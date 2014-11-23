@@ -17,9 +17,6 @@ call compile preprocessFileLineNumbers "init\common\prepareEnemies.sqf";
 // Execute Loot function
 _null = execVM "funct\loot\loot.sqf";
 
-// Add Communication entry to create nametags
-_sitrep = [p1,"nametags"] call BIS_fnc_addCommMenuItem;
-
 // Add Submenus to communication options
 call compile  preprocessfile "cfg\submenus.sqf";  
 

@@ -1,12 +1,4 @@
-/* WHEN ADDING A NEW BUILDING
-	Define the building class name in the switches
-	on the bottom of PlacingBuilding.sqf and BuildBuilding.sqf
-	ALSO comment the building from the buildings with loot out
-	specified in Lootspawner\LSlootBuildings.sqf
-	
-	CALLING of PlacingBuilding.sqf
-						Building Classname     Startpostion
-	_null = ['Land_HelipadCivil_F', getpos player"] execVM 'funct\playerActions\PlacingBuilding.sqf'
+/* SUBMENU FOR NAMETAGS
 */
 
 nametags_submenu = [

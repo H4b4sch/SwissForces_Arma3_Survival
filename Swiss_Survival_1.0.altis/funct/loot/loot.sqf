@@ -228,6 +228,7 @@ while{true} do {
 		
 		// Check if we should let the player create a new base
 		if(var_PlayerProgress >= (_bonusBaseProgress select _bonusBaseIndex)) then {
+			[[[],"playerConnected.sqf"],"BIS_fnc_execVM",false,true] call BIS_fnc_MP;
 			_sitrep = [p1,"establish_base"] call BIS_fnc_addCommMenuItem;
 			_bonusBaseIndex = _bonusBaseIndex + 1;
 		};
