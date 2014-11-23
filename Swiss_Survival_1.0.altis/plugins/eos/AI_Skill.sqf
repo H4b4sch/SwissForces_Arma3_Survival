@@ -10,9 +10,9 @@ _infantryBase + 0.2,        // aimingShake
 _infantryBase,        // aimingSpeed
 _infantryBase,         // spotDistance
 _infantryBase,        // spotTime
-1,        // courage
-1,        // reloadSpeed
-1,        // commanding
+_infantryBase,        // courage
+_infantryBase,        // reloadSpeed
+_infantryBase,        // commanding
 _infantryBase        // general
 ];
 
@@ -24,9 +24,9 @@ _vehicleBase + 0.2,        // aimingShake
 _vehicleBase,        // aimingSpeed
 _vehicleBase,         // spotDistance
 _vehicleBase,        // spotTime
-1,        // courage
-1,        // reloadSpeed
-1,        // commanding
+_vehicleBase,        // courage
+_vehicleBase,        // reloadSpeed
+_vehicleBase,        // commanding
 _vehicleBase        // general
 ];
 
@@ -38,9 +38,9 @@ _vehicleBase + 0.2,        // aimingShake
 _vehicleBase,        // aimingSpeed
 _vehicleBase,         // spotDistance
 _vehicleBase,        // spotTime
-1,        // courage
-1,        // reloadSpeed
-1,        // commanding
+_vehicleBase,        // courage
+_vehicleBase,        // reloadSpeed
+_vehicleBase,        // commanding
 _vehicleBase        // general
 ];
 
@@ -52,9 +52,9 @@ _vehicleBase + 0.2,        // aimingShake
 _vehicleBase,        // aimingSpeed
 _vehicleBase + 0.1,         // spotDistance
 _vehicleBase + 0.2,        // spotTime
-1,        // courage
-1,        // reloadSpeed
-1,        // commanding
+_vehicleBase,        // courage
+_vehicleBase,        // reloadSpeed
+_vehicleBase,        // commanding
 _vehicleBase        // general
 ];
 
@@ -66,9 +66,9 @@ _vehicleBase + 0.2,        // aimingShake
 _vehicleBase,        // aimingSpeed
 _vehicleBase,         // spotDistance
 _vehicleBase,        // spotTime
-1,        // courage
-1,        // reloadSpeed
-1,        // commanding
+_vehicleBase,        // courage
+_vehicleBase,        // reloadSpeed
+_vehicleBase,        // commanding
 _vehicleBase        // general
 ];
 

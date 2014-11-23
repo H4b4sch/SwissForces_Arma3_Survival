@@ -161,7 +161,7 @@ _begintime = time;
 								if((random(100)) < 5) then {
 									
 									// The radiant of the marker ranges from 10 to 30 meters
-									_radiusMkr = ((round(random(20))) + 10);
+									/*_radiusMkr = ((round(random(20))) + 10);
 									
 									// Create actual marker
 									_marker = createMarker ["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex, _spwnPos];
@@ -171,7 +171,7 @@ _begintime = time;
 									_marker setMarkerAlpha 1;
 																																																														//1
 									_null = [["randomLootDefenseMkr" + str var_randomLootDefenseMkrIndex],[1,1],[1,1,66],[0,0],[0],[0],[0,0],[0,0,300,EAST,TRUE]] call EOS_Spawn;
-									
+									*/
 									// Count up index
 									var_randomLootDefenseMkrIndex = var_randomLootDefenseMkrIndex + 1;
 								};

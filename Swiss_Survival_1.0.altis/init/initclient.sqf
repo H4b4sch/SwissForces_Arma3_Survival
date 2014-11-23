@@ -8,9 +8,13 @@ _null = [] execVM "funct\common\healAction.sqf";
 _null = [] execVM "funct\common\disableFatigue.sqf";
 
 // If this is the Alpha Squad Leader (player 1)
-if (var_playerIndex == 1) then {
+if (var_playerIndex == 0) then {
 	// Add Communication entry to create nametags
-	_sitrep = [p1,"nametags"] call BIS_fnc_addCommMenuItem;
+	//_sitrep = [p1,"nametags"] call BIS_fnc_addCommMenuItem;
+	player addAction ["Nametag", {createDialog 'nametag_custom'}];
+	player addAction ["Build Base", {_null = ['Land_i_House_Small_03_V1_F', getpos player] execVM 'funct\playerActions\PlacingBuilding.sqf'}];
+	player addAction ["Land Refit", {_null = ['Land_i_Garage_V1_F', getpos player] execVM 'funct\playerActions\PlacingBuilding.sqf'}];
+	player addAction ["Air Refit", {_null = ['Land_HelipadCivil_F', getpos player] execVM 'funct\playerActions\PlacingBuilding.sqf'}];
 };
 
 // Set variable for player name
