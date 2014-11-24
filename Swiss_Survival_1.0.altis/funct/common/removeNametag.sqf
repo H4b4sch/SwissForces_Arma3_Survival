@@ -15,6 +15,6 @@
 */
 
 _id = _this select 0;
-_description = player getVariable "unitName";
+_description = str(player);
 
 ["id_"+ _description + "_" + str _id, "onEachFrame"] call BIS_fnc_removeStackedEventHandler;

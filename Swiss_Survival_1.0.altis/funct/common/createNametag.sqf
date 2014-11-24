@@ -17,7 +17,7 @@
 
 _object = _this select 0;
 _text = _this select 1;
-_description = player getVariable "unitName";
+_description = str (player);
 
 // Add event handler for each frame
 ["id_"+ _description + "_" + str var_eventHandlerIconIndex, "onEachFrame", {

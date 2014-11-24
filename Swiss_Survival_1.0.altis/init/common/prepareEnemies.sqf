@@ -120,12 +120,6 @@ _instanceNo = 0;
   		_patrollingArmor = ceil(var_numPlayers / 2);	
   		_patrollingArmor = _patrollingArmor + 2;
   		
-  		// Depending on the number of players there can be a helicopter
-  		// 1 Player = 66%, 2 players = 75%, 3 Players = 80%, 6 Players = 87.5%
-  		if(random((var_numPlayers + 2)) > 1.0) then { 
-  			_patrollingHelicopters = round(random(1));	
-  		};
-  		
   		// There are always 4 static weapons
   		_static = 4;
   		
@@ -146,11 +140,6 @@ _instanceNo = 0;
   			_patrollingArmor = _patrollingArmor + 1;
   		};
   		
-  		// There is always a 33% chance to spawn a helicopter
-  		if(random(1.5) > 1.0) then {
-  			_patrollingHelicopters = 1;
-  		};
-  		
   		// There is at least one static
   		// Also statics as much as half the players (rounded up) are added
   		// This means 1/2 Players = +1    3/4 players = +2    5/6 players = +3
@@ -169,11 +158,6 @@ _instanceNo = 0;
   		_patrollingArmor = ceil(var_numPlayers / 2);	
   		_patrollingArmor = _patrollingArmor + 1;
   		
-  		// Allways a 50% chance for a helicopter
-  		if(random(2) > 1.0) then { 										// 50% Chance to spawn 1 helicopter
-  			_patrollingHelicopters = 1;
-  		};
-  		
   		// Allways 6 statics
   		_static = 6;
   		
@@ -187,9 +171,6 @@ _instanceNo = 0;
   		
   		// There are no heavy armor
   		_patrollingArmor = 0;
-  		
-  		// There are no helicopters
-  		_patrollingHelicopters = 0;
   		
   		// There are random 1 or 2 statics
   		_static = ceil(random(2));
@@ -208,9 +189,6 @@ _instanceNo = 0;
   		
   		// There are no heavy armor
   		_patrollingArmor = 0;
-  		
-  		// There are no helicopters
-  		_patrollingHelicopters = 0;	
   		
   		// Random 0 to 1 Static
   		_static = round(random(1));
